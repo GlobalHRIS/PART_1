@@ -13,7 +13,7 @@ def load_data(AI_March_Data):
 
 def search_employee(employee_id, data):
     for employee in data:
-        if employee['Employee ID'] == employee_id:
+        if employee['Employee Number'] == employee_id:
             return employee
     return None
 
@@ -22,7 +22,7 @@ data = load_data('employee_data.csv')
 st.title('Employee Data Search')
 employee_id = st.text_input('Enter Employee ID:')
 
-employee = search_employee(employee number, data)
+employee = search_employee(Employee Number, data)
 if employee:
     st.write(employee)
 else:
