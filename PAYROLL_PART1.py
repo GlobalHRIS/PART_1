@@ -10,11 +10,10 @@ def read_data(file_name):
 
 def main():
     st.set_page_config(page_title="Company Logo Example", page_icon=":guardsman:", layout="wide")
-    st.title("Global HR Implementation Services Limited")
-
+    st.title("Global HR Implementation Services Limited \nEmployee Data Search")
     logo_image = Image.open("logo.png")
     st.image(logo_image, width=200)
-    st.title("Employee Data Search")
+
 
     file_name = "AI_March_Data.csv"
     df = read_data(file_name)
