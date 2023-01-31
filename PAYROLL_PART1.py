@@ -22,7 +22,7 @@ data = load_data('employee_data.csv')
 st.title('Employee Data Search')
 employee_id = st.text_input('Enter Employee ID:')
 
-employee = search_employee(employee_id, data)
+employee = search_employee(employee number, data)
 if employee:
     st.write(employee)
 else:
