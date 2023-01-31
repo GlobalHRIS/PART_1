@@ -1,9 +1,9 @@
+
+
 import streamlit as st
 import pandas as pd
 
 @st.cache
-
-
 def read_data(file_name):
     df = pd.read_csv(file_name)
     return df
@@ -11,8 +11,8 @@ def read_data(file_name):
 def main():
     st.set_page_config(page_title="Company Logo Example", page_icon=":guardsman:", layout="wide")
     st.title("Global HR Implementation Services Limited \nEmployee Data Search")
-    logo_image = Image.open("logo.png")
-    st.image(logo_image, width=200)
+    #logo_image = Image.open()
+    st.image("logo.png", width=200)
 
 
     file_name = "AI_March_Data.csv"
