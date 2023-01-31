@@ -13,10 +13,9 @@ def main():
     st.image("logo.png", width=400)
     st.title("Global HR Implementation Services Limited \n Employee Data Search")
 
-    file_name = "Feb_Data.csv"
-    df1 = read_data(file_name)
-    file_name = "March_Data.csv"
-    df2 = read_data(file_name)
+
+    df1 = read_data("Feb_Data.csv")
+    df2 = read_data("March_Data.csv")
 
     emp_number = st.text_input("Enter Employee Number")
     if emp_number:
