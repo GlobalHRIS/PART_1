@@ -21,7 +21,7 @@ def main():
     if emp_number:
         Feb_emp_data = df1[df1['Employee Number'] == int(emp_number)]
         st.write(Feb_emp_data)
-        st.write(f"Total Net pay: Rs.{Net Pay:.2f} "))
+        st.write(print(f"Total Net pay: Rs.{Net Pay:.2f} "))
        # Mar_emp_data = df2[df2['Employee Number'] == int(emp_number)]
       #  st.write(Mar_emp_data) 
       
