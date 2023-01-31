@@ -22,15 +22,8 @@ def main():
         Feb_emp_data = df1[df1['Employee Number'] == int(emp_number)]
         st.write(Feb_emp_data)
     elif emp_number:
-        Mar_emp_data = df2[df2['Employee Number'] == int(emp_number)]
-        st.write(Mar_emp_data) 
-        #elif:
-        #st.write("Employee details not found in this month")
-        
-    #emp_number = st.text_input("Enter Employee Number")
-  
-        #else 
-        #st.write("Employee details not found in this month")    
-
+         Mar_emp_data = df2[df2['Employee Number'] == int(emp_number)]
+         st.write(Mar_emp_data) 
+      
 if __name__ == '__main__':
     main()
