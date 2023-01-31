@@ -1,29 +1,21 @@
-import csv
 import streamlit as st
+import pandas as pd
 
 @st.cache
-def load_data(AI_March_Data):
-    data = []
-    with open('AI_March_Data.csv', 'r') as f:
-        reader = csv.reader(f)
-        header = next(reader)
-        for row in reader:
-            data.append(dict(zip(header, row)))
-    return data
+def read_data(file_name):
+    df = pd.read_csv(file_name)
+    return df
 
-def search_employee(employee_id, data):
-    for employee in data:
-        if employee['Employee Number'] == employee_id:
-            return employee
-    return None
+def main():
+    st.title("Employee Data Search")
 
-data = load_data('employee_data.csv')
+    file_name = "AI_March_Data.csv"
+    df = read_data(file_name)
 
-st.title('Employee Data Search')
-employee_id = st.text_input('Enter Employee ID:')
+    emp_number = st.text_input("Enter Employee Number")
+    if emp_number:
+        emp_data = df[df['Employee Number'] == int(emp_number)]
+        st.write(emp_data)
 
-employee = search_employee(Employee Number, data)
-if employee:
-    st.write(employee)
-else:
-    st.write('Employee not found')
+if __name__ == '__main__':
+    main()
