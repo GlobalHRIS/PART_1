@@ -15,20 +15,21 @@ def main():
 
     file_name = "AI_March_Data.csv"
     df1 = read_data(file_name)
+    file_name = "AI_Feb_Data.csv"
+    df2 = read_data(file_name)
 
     emp_number = st.text_input("Enter Employee Number")
     if emp_number:
         emp_data = df[df1['Employee Number'] == int(emp_number)]
         st.write(emp_data)
-        
-        
-    file_name = "AI_Feb_Data.csv"
-    df2 = read_data(file_name)
-    
+    else
+         st.write("Employee details not found in this month")
     #emp_number = st.text_input("Enter Employee Number")
     if emp_number:
         emp_data = df[df2['Employee Number'] == int(emp_number)]
-        st.write(emp_data)  
+        st.write(emp_data)
+    else 
+        st.write("Employee details not found in this month")
         
         
 
