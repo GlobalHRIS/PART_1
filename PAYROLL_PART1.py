@@ -20,10 +20,10 @@ def main():
 
     emp_number = st.text_input("Enter Employee Number")
     if emp_number:
-        Feb_emp_data = df[df1['Employee Number'] == int(emp_number)]
+        Feb_emp_data = df1[df1['Employee Number'] == int(emp_number)]
         st.write(Feb_emp_data)
     if emp_number:
-        Mar_emp_data = df[df2['Employee Number'] == int(emp_number)]
+        Mar_emp_data = df2[df2['Employee Number'] == int(emp_number)]
         st.write(Mar_emp_data) 
         #elif:
         #st.write("Employee details not found in this month")
