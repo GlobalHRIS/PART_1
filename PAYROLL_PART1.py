@@ -10,26 +10,24 @@ def read_data(file_name):
 
 def main():
     st.set_page_config(page_title="Company Logo Example", page_icon=":guardsman:", layout="wide")
-    st.title("Global HR Implementation Services Limited \nEmployee Data Search")
-    #logo_image = Image.open()
-    st.image("logo.png", width=200)
-
+    st.image("logo.png", width=300)
+    st.title("Global HR Implementation Services Limited \n Employee Data Search")
 
     file_name = "AI_March_Data.csv"
-    df = read_data(file_name)
+    df1 = read_data(file_name)
 
     emp_number = st.text_input("Enter Employee Number")
     if emp_number:
-        emp_data = df[df['Employee Number'] == int(emp_number)]
+        emp_data = df[df1['Employee Number'] == int(emp_number)]
         st.write(emp_data)
         
         
     file_name = "AI_Feb_Data.csv"
-    df = read_data(file_name)
-
-    emp_number = st.text_input("Enter Employee Number")
+    df2 = read_data(file_name)
+    
+    #emp_number = st.text_input("Enter Employee Number")
     if emp_number:
-        emp_data = df[df['Employee Number'] == int(emp_number)]
+        emp_data = df[df2['Employee Number'] == int(emp_number)]
         st.write(emp_data)  
         
         
