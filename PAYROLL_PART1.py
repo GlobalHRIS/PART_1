@@ -13,15 +13,15 @@ def main():
     st.image("logo.png", width=400)
     st.title("Global HR Implementation Services Limited \n Employee Data Search")
 
-    file_name = "March_Data.csv"
+    file_name = "Feb_Data.csv"
     df = read_data(file_name)
     #file_name = "Feb_Data.csv"
     #df2 = read_data(file_name)
 
     emp_number = st.text_input("Enter Employee Number")
     if emp_number:
-        March_emp_data = df[df['Employee Number'] == int(emp_number)]
-        st.write(March_emp_data)
+        Feb_emp_data = df[df['Employee Number'] == int(emp_number)]
+        st.write(Feb_emp_data)
      #else:
         #st.write("Employee details not found in this month")
     #emp_number = st.text_input("Enter Employee Number")
