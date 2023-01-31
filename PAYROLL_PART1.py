@@ -22,8 +22,10 @@ def main():
     if emp_number:
         Feb_emp_data = df[df['Employee Number'] == int(emp_number)]
         st.write(Feb_emp_data)
-        elif:
-        st.write("Employee details not found in this month")
+        
+        #elif:
+        #st.write("Employee details not found in this month")
+        
     #emp_number = st.text_input("Enter Employee Number")
     #if emp_number:
         #Feb_emp_data = df[df2['Employee Number'] == int(emp_number)]
