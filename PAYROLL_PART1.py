@@ -9,7 +9,7 @@ def read_data(file_name):
     return df
 
 def main():
-    st.set_page_config(page_title="Company Logo Example", page_icon=":guardsman:", layout="wide")
+    st.set_page_config(page_title="GlobalHRIS", page_icon=":guardsman:", layout="wide")
     st.image("logo.png", width=400)
     st.title("Global HR Implementation Services Limited \n Employee Data Search")
 
