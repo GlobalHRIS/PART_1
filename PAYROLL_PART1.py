@@ -20,15 +20,15 @@ def main():
 
     emp_number = st.text_input("Enter Employee Number")
     if emp_number:
-        emp_data = df[df1['Employee Number'] == int(emp_number)]
+        March_emp_data = df[df1['Employee Number'] == int(emp_number)]
         st.write(emp_data)
-     else
+        else
          st.write("Employee details not found in this month")
     #emp_number = st.text_input("Enter Employee Number")
     if emp_number:
-        emp_data = df[df2['Employee Number'] == int(emp_number)]
+        Feb_emp_data = df[df2['Employee Number'] == int(emp_number)]
         st.write(emp_data)
-    else 
+        else 
         st.write("Employee details not found in this month")
         
         
