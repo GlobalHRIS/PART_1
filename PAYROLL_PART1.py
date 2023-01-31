@@ -3,18 +3,17 @@ import pandas as pd
 
 @st.cache
 
-def main():
-    st.set_page_config(page_title="Company Logo Example", page_icon=":guardsman:", layout="wide")
-    st.title("Global HR Implementation Services Limited")
-
-    logo_image = Image.open("logo.png")
-    st.image(logo_image, width=200)
 
 def read_data(file_name):
     df = pd.read_csv(file_name)
     return df
 
 def main():
+    st.set_page_config(page_title="Company Logo Example", page_icon=":guardsman:", layout="wide")
+    st.title("Global HR Implementation Services Limited")
+
+    logo_image = Image.open("logo.png")
+    st.image(logo_image, width=200)
     st.title("Employee Data Search")
 
     file_name = "AI_March_Data.csv"
