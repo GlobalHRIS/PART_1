@@ -4,7 +4,7 @@ import pandas as pd
 @st.cache
 
 def main():
-    st.set_page_config(page_title="Automatic net pay difference checker tool", page_icon=":guardsman:", layout="wide")
+    st.set_page_config(page_title="Company Logo Example", page_icon=":guardsman:", layout="wide")
     st.title("Global HR Implementation Services Limited")
 
     logo_image = Image.open("logo.png")
