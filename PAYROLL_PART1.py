@@ -14,13 +14,13 @@ def main():
     st.title("Global HR Implementation Services Limited \n Employee Data Search")
 
     file_name = "March_Data.csv"
-    df1 = read_data(file_name)
+    df = read_data(file_name)
     #file_name = "Feb_Data.csv"
     #df2 = read_data(file_name)
 
     emp_number = st.text_input("Enter Employee Number")
     if emp_number:
-        March_emp_data = df1[df1['Employee Number'] == int(emp_number)]
+        March_emp_data = df[df['Employee Number'] == int(emp_number)]
         st.write(March_emp_data)
      #else:
         #st.write("Employee details not found in this month")
