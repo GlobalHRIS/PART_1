@@ -2,6 +2,17 @@ import streamlit as st
 import pandas as pd
 
 @st.cache
+
+def main():
+    st.set_page_config(page_title="Automatic net pay difference checker tool", page_icon=":guardsman:", layout="wide")
+    st.title("Global HR Implementation Services Limited")
+
+    logo_image = Image.open("logo.png")
+    st.image(logo_image, width=200)
+
+if __name__ == '__main__':
+    main()
+
 def read_data(file_name):
     df = pd.read_csv(file_name)
     return df
