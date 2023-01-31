@@ -10,12 +10,12 @@ def read_data(file_name):
 
 def main():
     st.set_page_config(page_title="Company Logo Example", page_icon=":guardsman:", layout="wide")
-    st.image("logo.png", width=300)
+    st.image("logo.png", width=400)
     st.title("Global HR Implementation Services Limited \n Employee Data Search")
 
-    file_name = "AI_March_Data.csv"
+    file_name = "March_Data.csv"
     df1 = read_data(file_name)
-    #file_name = "AI_Feb_Data.csv"
+    #file_name = "Feb_Data.csv"
     #df2 = read_data(file_name)
 
     emp_number = st.text_input("Enter Employee Number")
