@@ -10,9 +10,6 @@ def main():
     logo_image = Image.open("logo.png")
     st.image(logo_image, width=200)
 
-if __name__ == '__main__':
-    main()
-
 def read_data(file_name):
     df = pd.read_csv(file_name)
     return df
