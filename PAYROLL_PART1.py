@@ -13,17 +13,13 @@ def main():
     st.image("logo.png", width=400)
     st.title("Global HR Implementation Services Limited \n Employee Data Search")
     emp_number = st.text_input("Enter Employee Number")
-    df2 = read_data("March_Data.csv")   
-    #df1 = read_data("Feb_Data.csv")
+   
+    df1 = read_data("Feb_Data.csv")
   
     if emp_number:
-        #Feb_emp_data = df1[df1['Employee Number'] == int(emp_number)]
-        #st.write(Feb_emp_data)
-    #elif:    
- 
-        Mar_emp_data = df2[df2['Employee Number'] == int(emp_number)] 
-        st.write(Mar_emp_data) 
-        st.write("Total Net pay: Rs.{Net Pay:.2f} ")
+        Feb_emp_data = df1[df1['Employee Number'] == int(emp_number)]
+        st.write(Feb_emp_data)
+   
       
 if __name__ == '__main__':
     main()
