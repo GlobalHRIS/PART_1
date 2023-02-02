@@ -16,13 +16,13 @@ st.title("Global HR Implementation Services Limited \n Employee Data Search")
 emp_number = st.text_input("Enter Employee Number")
 # Reading the February employee data  
 df1 = read_data("Feb_Data.csv")
-    if emp_number:
-        Feb_emp_data = df1[df1['Employee Number'] == int(emp_number)]
-        st.write(Feb_emp_data)
+if emp_number:
+    Feb_emp_data = df1[df1['Employee Number'] == int(emp_number)]
+    st.write(Feb_emp_data)
 # Reading the March employee data
 df2 = read_data("March_Data.csv")
-    if emp_number:
-        Mar_emp_data = df2[df2['Employee Number'] == int(emp_number)]
-        st.write(Mar_emp_data)
+if emp_number:
+    Mar_emp_data = df2[df2['Employee Number'] == int(emp_number)]
+    st.write(Mar_emp_data)
    
 
