@@ -1,20 +1,31 @@
-
-
 import streamlit as st
 import pandas as pd
 
+import mysql.connector as msql
+from mysql.connector import Error
+try:
+    conn = msql.connect(host='localhost', user='root',  
+                        password='LeakTimeBike4242')
+    if conn.is_connected():        
+        # Execute query
+        sql = "SELECT * FROM employee.employee_data"
+        cursor.execute(sql)
+        # Fetch all the records
+        result = cursor.fetchall()
+        for i in result:
+        print(i)
+except Error as e:
+    print("Error while connecting to MySQL", e)
+    
 @st.cache
 def read_data(file_name):
     df = pd.read_csv(file_name)
     return df
-
-
 # Streamklit User Interface part
 st.set_page_config(page_title="GlobalHRIS", page_icon=":guardsman:", layout="wide")
 st.image("logo.png", width=400)
 st.title("Global HR Implementation Services Limited \n Employee Data Search")
 emp_number = st.text_input("Enter Employee Number")
-
 
 def calculate_change(previous_net_pay, current_net_pay):
     return current_net_pay - previous_net_pay
