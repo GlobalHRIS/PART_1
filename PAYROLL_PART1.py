@@ -13,7 +13,7 @@ try:
         # Fetch all the records
         result = cursor.fetchall()
     for i in result:
-    print(i)
+        print(i)
     except Error as e:
     print("Error while connecting to MySQL", e)
     
