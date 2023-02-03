@@ -14,7 +14,7 @@ try:
         result = cursor.fetchall()
         for i in result:
             print(i)
-        except Error as e:
+    except Error as e:
             print("Error while connecting to MySQL", e)
     
 @st.cache
