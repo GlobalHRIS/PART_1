@@ -8,14 +8,13 @@ try:
                         password='LeakTimeBike4242')
     if conn.is_connected():        
         # Execute query
-        sql = "SELECT * FROM employee.employee_data"
+        sql = "SELECT * FROM globalhris.Feb_Data"
         cursor.execute(sql)
         # Fetch all the records
         result = cursor.fetchall()
         for i in result:
             print(i)
-    except Error as e:
-            print("Error while connecting to MySQL", e)
+ 
     
 @st.cache
 def read_data(file_name):
