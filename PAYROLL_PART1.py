@@ -24,8 +24,8 @@ import itertools
 d = {}
 
 for fi, f in enumerate(df):
-    fh = open(df)
-    for line in fh:
+    data = open(df)
+    for line in data:
         sl = line.split()
         name = sl[0]
         val = int(sl[1])
