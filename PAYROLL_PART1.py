@@ -15,7 +15,7 @@ emp_number = st.text_input("Enter Employee Number")
 df1 = read_data("Feb_Data.csv")
 if emp_number:
     Feb_emp_data = df1[df1['Employee Number'] == int(emp_number)]
-   st.write(Feb_emp_data)
+    st.write(Feb_emp_data)
 # Reading the March employee data
 df2 = read_data("March_Data.csv")
 if emp_number:
