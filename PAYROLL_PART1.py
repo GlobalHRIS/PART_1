@@ -17,9 +17,9 @@ df = pd.concat(map(pd.read_csv, ['Feb_Data.csv', 'March_Data.csv']))
 if emp_number:
     emp_data = df[df['Employee Number'] == int(emp_number)]
     st.write(emp_data)
-    df1=pd.read_csv("Feb_Data.csv",usecols=["Net pay Feb"])
-    df2=pd.read_csv("March_Data.csv",usecols=["Net pay Mar"])
-    netpay_differnce = df1-df2
-    st.write(netpay_differnce)
+    #df1=pd.read_csv("Feb_Data.csv",usecols=["Net pay Feb"])
+    #df2=pd.read_csv("March_Data.csv",usecols=["Net pay Mar"])
+    #netpay_differnce = df1-df2
+    #st.write(netpay_differnce)
    
 
