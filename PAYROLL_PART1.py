@@ -18,15 +18,30 @@ df = pd.concat(map(pd.read_csv, ['Feb_Data.csv', 'March_Data.csv']))
 if emp_number:
     emp_data = df[df['Employee Number'] == int(emp_number)]
     st.write(emp_data)
+    
+import itertools
 
-#df1 = read_data("Feb_Data.csv")
-#if emp_number:
-    #Feb_emp_data = df1[df1['Employee Number'] == int(emp_number)]
-    #st.write(Feb_emp_data)
-# Reading the March employee data
-#df2 = read_data("March_Data.csv")
-#if emp_number:
-    #Mar_emp_data = df2[df2['Employee Number'] == int(emp_number)]
-    #st.write(Mar_emp_data)
+d = {}
+
+for fi, f in enumerate(df):
+    fh = open(f)
+    for line in fh:
+        sl = line.split()
+        name = sl[0]
+        val = int(sl[1])
+        if name not in d:
+            d[name] = {}
+        if fi not in d[name]:
+            d[name][fi] = []
+        d[name][fi].append(val)
+    fh.close()
+
+for name, vals in d.items():
+    if len(vals) == len(files):
+        for var in itertools.product(*vals.values()):
+            if max(var) - min(var) <= 20:
+                out = '{}\t{}'.format(name, "\t".join(map(str, var)))
+                st.write(out)
+                break
    
 
