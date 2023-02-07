@@ -8,7 +8,7 @@ def read_data(file_name):
 # Reading the employee data 
 df1 = pd.read_csv('Feb_Data.csv')
 #usecols = ['Employee Number','First Name','Last Name','Net Pay'])
-df2 = pd.read_csv('March_Data.csv)
+df2 = pd.read_csv('March_Data.csv')
                   #usecols = ['Employee Number','First Name','Last Name','Net Pay'])
 
 # Streamlit User Interface part
