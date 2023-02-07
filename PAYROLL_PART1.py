@@ -8,10 +8,8 @@ st.image("logo.png", width = 400)
 st.title("Global HR Implementation Services Limited \n Employee Data Search")
 emp_number = st.text_input("Enter Employee Number")
 
-# Reading the employee data 
-df1 = pd.read_csv('feb_emp_data.csv', usecols = ['Employee Number','First Name','Last Name','Net Pay'])
-df2 = pd.read_csv('march_emp_data.csv', usecols = ['Employee Number','First Name','Last Name','Net Pay'])
-
+df1 = pd.read_csv('Feb_Data.csv', usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay'])
+df2 = pd.read_csv('March_Data.csv',usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay'])
 
 #df = pd.concat(map(pd.read_csv, ['Feb_Data.csv','March_Data.csv']))
 # Condition checking              
