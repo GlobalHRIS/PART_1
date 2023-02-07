@@ -4,8 +4,8 @@ import pandas as pd
 
 
 # Reading the employee data 
-df1 = pd.read_csv('feb_emp_data.csv'), usecols = ['Employee Number','First Name','Last Name','Net Pay'])
-df2 = pd.read_csv('march_emp__Data.csv'), usecols = ['Employee Number','First Name','Last Name','Net Pay'])
+df1 = pd.read_csv('feb_emp_data.csv', usecols = ['Employee Number','First Name','Last Name','Net Pay'])
+df2 = pd.read_csv('march_emp_data.csv', usecols = ['Employee Number','First Name','Last Name','Net Pay'])
 
 # Streamlit User Interface part
 @st.cache
