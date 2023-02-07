@@ -17,7 +17,7 @@ st.image("logo.png", width=400)
 st.title("Global HR Implementation Services Limited \n Employee Data Search")
 emp_number = st.text_input("Enter Employee Number") 
 
-df = pd.concat(map(pd.read_csv('March_Data.csv', 'Feb_Data.csv')))
+df = pd.concat(map(read_csv('March_Data.csv','Feb_Data.csv')))
                
 if emp_number:
     emp_data = df[df['Employee Number'] == int(emp_number)]
