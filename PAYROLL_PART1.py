@@ -17,8 +17,7 @@ st.image("logo.png", width=400)
 st.title("Global HR Implementation Services Limited \n Employee Data Search")
 emp_number = st.text_input("Enter Employee Number") 
 
-df = pd.concat(map(pd.read_csv, ['Feb_Data.csv',usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay'], 
-                                 'March_Data.csv',usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay']]))
+df = pd.concat(map(pd.read_csv, ['Feb_Data.csv',usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay'],'March_Data.csv',usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay']]))
 #df = pd.concat(map(pd.read_csv, ['Feb_Data.csv', 'March_Data.csv']))
                
 if emp_number:
