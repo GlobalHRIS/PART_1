@@ -6,7 +6,7 @@ def read_data(file_name):
     return df
 
 # Reading the employee data 
-df1 = pd.read_csv('Feb_Data.csv'), 
+df1 = pd.read_csv('Feb_Data.csv')
 #usecols = ['Employee Number','First Name','Last Name','Net Pay'])
 df2 = pd.read_csv('March_Data.csv)
                   #usecols = ['Employee Number','First Name','Last Name','Net Pay'])
