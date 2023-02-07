@@ -16,7 +16,7 @@ df2 = pd.read_csv('March_Data.csv',usecols = ['Employee Number', 'Forename', 'Su
 if emp_number:
     feb = df1[df1['Employee Number'] == int(emp_number)]
     Mar = df2[df2['Employee Number'] == int(emp_number)]
-    st.title("The Employee data for february")
+    st.title("The Employee data for February")
     st.write(feb)
     st.title("The Employee data for March")
     st.write(Mar)
