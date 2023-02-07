@@ -21,12 +21,12 @@ emp_number = st.text_input("Enter Employee Number")
 if emp_number:
     feb_emp_data = df1[df1['Employee Number'] == int(emp_number)]
     Mar_emp_data = df2[df2['Employee Number'] == int(emp_number)]
+    st.title("The Employee data for february")
     st.write(feb_emp_data)
+    st.title("The Employee data for March")
     st.write(Mar_emp_data)
     
-    
-    
-    #netpay_differnce = df1-df2
-    #st.write(netpay_differnce)
+    netpay_differnce = df1-df2
+    st.write('netpay differnce of the employee is:'netpay_differnce )
    
 
