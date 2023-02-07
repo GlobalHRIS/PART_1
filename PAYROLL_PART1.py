@@ -7,8 +7,8 @@ def read_data(file_name):
     return df
 
 # Reading the employee data 
-df1 = pd.read_csv('Feb_Data.csv', usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay'])
-df2 = pd.read_csv('March_Data.csv',usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay'])
+#df1 = pd.read_csv('Feb_Data.csv', usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay'])
+#df2 = pd.read_csv('March_Data.csv',usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay'])
 
     
 # Streamlit User Interface part
@@ -17,8 +17,8 @@ st.image("logo.png", width=400)
 st.title("Global HR Implementation Services Limited \n Employee Data Search")
 emp_number = st.text_input("Enter Employee Number") 
 
-#df = pd.concat(map(pd.read_csv, ['Feb_Data.csv',usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay'],'March_Data.csv',usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay']]))
-df = pd.concat(map(df1, df2))
+df = pd.concat(map(pd.read_csv, ['Feb_Data.csv','March_Data.csv']))
+#df = pd.concat(map(df1, df2))
 
                
 if emp_number:
