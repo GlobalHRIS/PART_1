@@ -7,8 +7,8 @@ def read_data(file_name):
     return df
 
 # Reading the employee data 
-df1 = pd.read_csv('Feb_Data.csv', usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay'])
-df2 = pd.read_csv('March_Data.csv',usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay'])
+df1 = pd.read_csv('Feb_Data.csv', usecols = ['Employee Number', 'First Name', 'Last Name', 'Net Pay'])
+df2 = pd.read_csv('March_Data.csv',usecols = ['Employee Number', 'First Name', 'Last Name', 'Net Pay'])
 
 # Streamlit User Interface part
 st.set_page_config(page_title="GlobalHRIS", page_icon=":guardsman:", layout="wide")
@@ -26,7 +26,7 @@ if emp_number:
     st.title("The Employee data for March")
     st.write(Mar_emp_data)
     
-    netpay_differnce = df1-df2
-    st.write('netpay differnce of the employee is:'netpay_differnce )
+    #netpay_differnce = df1-df2
+    #st.write('netpay differnce of the employee is:'netpay_differnce )
    
 
