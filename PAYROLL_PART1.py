@@ -7,11 +7,11 @@ def read_data(file_name):
 
 # Reading the employee data 
 df1 = pd.read_csv('Feb_Data.csv', usecols = ['Employee Number','First Name','Last Name','Net Pay'])
-df2 = pd.read_csv('March_Data.csv',usecols = ['Employee Number','First Name','Last Name','Net Pay'])
+df2 = pd.read_csv('March_Data.csv', usecols = ['Employee Number','First Name','Last Name','Net Pay'])
 
 # Streamlit User Interface part
 st.set_page_config(page_title="GlobalHRIS", page_icon=":guardsman:", layout="wide")
-st.image("logo.png", width=400)
+st.image("logo.png", width = 400)
 st.title("Global HR Implementation Services Limited \n Employee Data Search")
 emp_number = st.text_input("Enter Employee Number") 
 
