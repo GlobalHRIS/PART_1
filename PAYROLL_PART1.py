@@ -1,15 +1,14 @@
 import streamlit as st
 import pandas as pd
-@st.cache
-def read_data(file_name):
-    df = pd.read_csv(file_name)
-    return df
+
+
 
 # Reading the employee data 
 df1 = pd.read_csv('feb_emp_data.csv'), usecols = ['Employee Number','First Name','Last Name','Net Pay'])
 df2 = pd.read_csv('march_emp__Data.csv'), usecols = ['Employee Number','First Name','Last Name','Net Pay'])
 
 # Streamlit User Interface part
+@st.cache
 st.set_page_config(page_title="GlobalHRIS", page_icon=":guardsman:", layout="wide")
 st.image("logo.png", width = 400)
 st.title("Global HR Implementation Services Limited \n Employee Data Search")
