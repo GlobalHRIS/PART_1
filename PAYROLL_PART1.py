@@ -17,7 +17,7 @@ st.title("Global HR Implementation Services Limited \n Employee Data Search")
 emp_number = st.text_input("Enter Employee Number") 
 
 #df = pd.concat(map(pd.read_csv, ['Feb_Data.csv','March_Data.csv']))
-              
+# Condition checking              
 if emp_number:
     feb_emp_data = df1[df1['Employee Number'] == int(emp_number)]
     Mar_emp_data = df2[df2['Employee Number'] == int(emp_number)]
