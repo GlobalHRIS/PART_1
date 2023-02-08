@@ -22,7 +22,7 @@ if emp_number:
     st.write(Mar)
  
 
-    #netpay_differnce = df1-df2
-    #st.write('netpay differnce of the employee is:'netpay_differnce )
+    netpay_differnce = df1["Net Pay"]-df2["Net Pay"]
+    st.write('netpay differnce of the employee is {}.format(netpay_differnce))
    
 
