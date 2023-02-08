@@ -10,7 +10,7 @@ st.title("Global HR Implementation Services Limited \n Employee Data Search")
 
 
 df1 =  pd.read_csv('netpaydata.csv')
-emp_number = st.text.input("Enter Employee Number")
+emp_number = st.text_input("Enter Employee Number")
 
 # Condition checking  
             
