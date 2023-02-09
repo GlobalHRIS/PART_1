@@ -12,7 +12,7 @@ df2 = pd.read_csv('March_Data.csv',usecols = ['Employee Number', 'Forename', 'Su
 
 #df = pd.concat(map(pd.read_csv, ['Feb_Data.csv','March_Data.csv']))
 
-def netpay_diff(emp_number)    
+def netpay_diff(emp_number):    
     netpay_diff = [df1["Net Pay"]-df2["Net Pay"]]
     st.write(netpay_diff)
     return netpay_diff
