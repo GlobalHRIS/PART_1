@@ -12,9 +12,11 @@ emp_number = st.text_input("Enter Employee Number")
 # Condition checking    
 #ok = st.button("Calculate Netpay Difference")
 if emp_number:
-    #Calculate the Net Pay difference
-    st.write(Netpay_diff)
-    st.subheader(f"The netpay difference is ${netpay_diff[0]:.2f}")
+    if emp_number:
+    data = df1[df1['Employee Number'] == int(emp_number)]
+    st.write("""### The Net Pay Diffefence of the employee""")
+    st.write(Netpay_Diff)
+    #st.subheader(f"The netpay difference is ${netpay_diff[0]:.2f}")
 
 
  
