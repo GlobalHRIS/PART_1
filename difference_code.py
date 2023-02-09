@@ -13,8 +13,8 @@ emp_number = st.text_input("Enter Employee Number")
 #ok = st.button("Calculate Netpay Difference")
 if emp_number:
     #Calculate the Net Pay difference
-    st.write(netpay_diff)
-    st.subheader(f"The netpay diffeernce is ${netpay_diff[0]:.2f}")
+    st.write(Netpay_diff)
+    st.subheader(f"The netpay difference is ${netpay_diff[0]:.2f}")
 
 
  
