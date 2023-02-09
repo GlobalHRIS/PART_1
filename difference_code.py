@@ -15,7 +15,7 @@ emp_number = st.text_input("Enter Employee Number")
 #ok = st.button("Calculate Netpay Difference")
 if emp_number:
     #Calculate the Net Pay difference
-    diff = df1.loc['Net Pay Feb']- df1['Net pay March']
+    diff = df1['Net Pay Feb']- df1['Net pay March']
     st.write(diff)
     st.subheader(f"The netpay diffeernce is ${diff[0]:.2f}")
 
