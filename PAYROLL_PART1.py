@@ -21,10 +21,10 @@ df2 = pd.read_csv('March_Data.csv',usecols = ['Employee Number', 'Forename', 'Su
 if emp_number:
     feb = df1[df1['Employee Number'] == int(emp_number)]
     Mar = df2[df2['Employee Number'] == int(emp_number)]
-    st.write("""### February month data""")
+    st.write("""### February employee data""")
     st.write(feb)
-    st.title("""###March Month data""")
+    st.title("""### March employee data""")
     st.write(Mar)
     netpay_diff = df1["Net Pay"]-df2["Net Pay"]
-
+    st.write(netpay_diff)
 
