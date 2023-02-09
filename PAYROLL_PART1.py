@@ -20,9 +20,9 @@ if emp_number:
     st.write(feb)
     st.title("The Employee data for March")
     st.write(Mar)
- 
-
-    netpay_differnce = [df1["Net Pay"]-df2["Net Pay"]]
-    st.write(netpay_differnce)
-   
+    
+def netpay_diff()    
+    netpay_diff = [df1["Net Pay"]-df2["Net Pay"]]
+    st.write(netpay_diff)
+    return netpay_diff
 
