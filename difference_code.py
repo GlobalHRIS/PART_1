@@ -15,9 +15,8 @@ emp_number = st.text_input("Enter Employee Number")
 # Condition checking  
             
 if emp_number:
-            data = df1[df1['Employee_Number'] == int(emp_number)]
-            df1['diff_value']= df1['Net pay Feb'] - df1['Net pay March']
-            st.write(diff_value)
+     df1['diff_value']= df1['Net pay Feb'] - df1['Net pay March']
+     st.write(diff_value)
  
 
 
