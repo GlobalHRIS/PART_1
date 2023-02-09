@@ -4,7 +4,7 @@ import pandas as pd
 # Streamlit User Interface part
 st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 st.image("logo.png", width = 400)
-st.title("Global HR Implementation Services Limited \n Employee Data Search")
+st.title("Global HR Implementation Services Limited \n AI Employee Net Pay Difference Calculator")
 emp_number = st.text_input("Enter Employee Number")
 
 df1 = pd.read_csv('Feb_Data.csv', usecols = ['Employee Number', 'Forename', 'Surname', 'Net Pay'])
