@@ -1,23 +1,25 @@
-
-
 import streamlit as st
 import pandas as pd
 
 # Streamlit User Interface part
 st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 st.image("logo.png", width = 400)
-st.title("Global HR Implementation Services Limited \n Employee Data Search")
-
+st.title("Global HR Implementation Services Limited \n Net Pay Difference Calculator")
 
 df1 =  pd.read_csv('netpaydata.csv')
 emp_number = st.text_input("Enter Employee Number")
 
-# Condition checking  
-            
+def netpay_diff(emp_number):
+    #Calculate the salary difference
+    diff = df1.loc['Net Pay Feb']- df1['Net pay March']
+    return diff
+
+# Condition checking    
+ok = st.button("Calculate Netpay Difference")
 if emp_number:
-     df1['diff_value']= df1['Net pay Feb'] - df1['Net pay March']
-     st.write(diff_value)
- 
+     netpay_diff(emp_number)
+     st.write(diff)
+     st.subheader(f"The netpay diffeernce is ${diff[0]:.2f}")
 
 
  
