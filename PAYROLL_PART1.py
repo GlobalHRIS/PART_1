@@ -23,7 +23,7 @@ if emp_number:
     Mar = df2[df2['Employee Number'] == int(emp_number)]
     st.write("""### February employee data""")
     st.write(feb)
-    st.title("""### March employee data""")
+    st.write("""### March employee data""")
     st.write(Mar)
     netpay_diff = df1["Net Pay"]-df2["Net Pay"]
     st.write(netpay_diff)
