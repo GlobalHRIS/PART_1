@@ -9,8 +9,9 @@ st.title("Global HR Implementation Services Limited \n Net Pay Difference Calcul
 df1 =  pd.read_csv('netpaydata.csv')
 emp_number = st.text_input("Enter Employee Number")
 
-# Condition checking    
+   
 #ok = st.button("Calculate Netpay Difference")
+# Condition checking 
 if emp_number:
     data = df1[df1['Employee_Number'] == int(emp_number)]
     st.write("""### The Net Pay Difference of the employee""")
