@@ -25,6 +25,6 @@ if emp_number:
     st.write(feb)
     st.write("""### March employee data""")
     st.write(Mar)
-    df1[netpay_diff] = df1[['Net Pay']]-df2[['Net Pay']]
+    df1[netpay_diff] = df1[df1[['Net Pay']]-df2[['Net Pay']]]
     st.write(netpay_diff)
 
