@@ -12,11 +12,8 @@ uploaded_file = st.file_uploader("Choose a csv file", type=["csv"])
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
-    st.write("Original DataFrame")
-    st.write(df)
     emp_number = st.text_input("Enter Employee Number") 
-    
-for row in df:
+    for row in df:
         if emp_number:
                 empdata = df[df['Employee Number'] == int(emp_number)]    
                 column1 = st.selectbox("Select the current month netpay", df.columns)
