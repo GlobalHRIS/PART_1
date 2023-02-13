@@ -1,5 +1,6 @@
 import streamlit as st
 import csv
+import pandas as pd
 
 # Streamlit User Interface part
 st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
