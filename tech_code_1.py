@@ -7,7 +7,8 @@ def calculate_difference(employee_number):
         
         # Loop through each row in the CSV file
     for row in reader:
-        if row['Employee_number'] == str(employee_number):
+        #if df1[df1['Employee Number'] == int(emp_number)]
+        if row[row['Employee_number'] == int(employee_number)]:
              current_month_salary = int(row['Net Pay March'])
              previous_month_salary = int(row['Net Pay Feb'])
              break
@@ -23,6 +24,9 @@ def calculate_difference(employee_number):
     st.write("The net pay difference for employee number {} is:".format(employee_number), difference)
 
 # Get the employee number from the user
+st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
+st.image("logo.png", width = 400)
+st.title("Global HR Implementation Services Limited \n AI Employee Net Pay Difference Calculator")
 employee_number = st.text_input("Enter the employee number:")
 
 # Call the calculate_difference function
