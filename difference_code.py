@@ -10,7 +10,7 @@ emp_number = st.text_input("Enter Employee Number")
 df = pd.read_csv('netpay_data.csv')
 
 for row in df:
-     data = row['Employee Number'] == int(emp_number)
+     data = df[df['Employee Number'] == int(emp_number)]
      if data:
            current_month_salary = int(row['Net Pay March'])
            current_month_salary = int(row['Net Pay Feb'])
