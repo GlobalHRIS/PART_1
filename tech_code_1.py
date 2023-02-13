@@ -11,7 +11,7 @@ employee_number = st.text_input("Enter the employee number:")
 calculate_difference(employee_number)
 
 def calculate_difference(employee_number):
-    df1 = pd.read_csv('netpaydata.csv',encoding='cp1252')
+        df1 = pd.read_csv('netpaydata.csv',encoding='cp1252')
         for row in df1:
             if df1[df1['Employee_number'] == int(employee_number)]:
                 current_month_salary = int(row['Net Pay March'])
