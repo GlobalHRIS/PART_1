@@ -3,7 +3,7 @@ import csv
 
 def calculate_difference(employee_number):
     # Open the CSV file containing employee data
-    reader = pd.read_csv(netpaydata.csv,encoding='cp1252')
+    reader = pd.read_csv('netpaydata.csv',encoding='cp1252')
         
         # Loop through each row in the CSV file
         for row in reader:
@@ -23,7 +23,7 @@ def calculate_difference(employee_number):
     st.write("The net pay difference for employee number {} is:".format(employee_number), difference)
 
 # Get the employee number from the user
-employee_number = st.number_input("Enter the employee number:")
+employee_number = st.text_input("Enter the employee number:")
 
 # Call the calculate_difference function
 calculate_difference(employee_number)
