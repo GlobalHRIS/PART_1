@@ -10,27 +10,36 @@ emp_number = st.text_input("Enter Employee Number")
 # Load the employee data from a CSV file into a Pandas DataFrame
 df = pd.read_csv('netpay_data.csv')
 for row in df:
-     if emp_number:
-           netpay = df[df['Employee Number'] == int(emp_number)]
-           st.write("Employee Data Found")
-           st.write(netpay)
-           netpay_diff = df['Netpay_Diff']
-           st.write(netpay_diff)
-           
-          
-           
-  
-
-
-
-          #netpay = df[df['Employee Number'] == int(emp_number)]
+     if row['Employee Number'] == int(emp_number):
+             current_month_salary = int(row['Net Pay Feb'])
+             previous_month_salary = int(row['Net Pay March'])
+             break
+      else:
+            # If employee number is not found in the CSV file
+            st.write("Employee number not found in the CSV file.")
+            return
         
-        #df['netpaydiff'] = df.apply(lambda x: diff(x['Net Pay March'], x['Net Pay Feb']), axis=1)
-          #current_month_netpay = int(df['Net Pay March'])
-          #st.write(current_month_netpay)
-          #previous_month_netpay = int(df['Net Pay Feb'])
-          #st.write(previous_month_netpay)
-          # Calculate the difference
-          #netpaydiff = current_month_netpay - previous_month_netpay
-          # Display the result
+    # Calculate the difference
+    difference = current_month_salary - previous_month_salary
+    
+    # Display the result
+    st.write("The net pay difference for employee number {} is:".format(emp_number), difference)
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+           #netpay = df[df['Employee Number'] == int(emp_number)]
+           #st.write("Employee Data Found")
+           #st.write(netpay)
+           #netpay_diff = df['Netpay_Diff']
+           #st.write(netpay_diff)
+           
+       
           
