@@ -9,15 +9,14 @@ emp_number = st.text_input("Enter Employee Number")
 # Load the employee data from a CSV file into a Pandas DataFrame
 df = pd.read_csv('netpay_data.csv')
 
-for row in df:
+if emp_number:
      data = df[df['Employee Number'] == int(emp_number)]
-     if data:
-           current_month_salary = int(row['Net Pay March'])
-           current_month_salary = int(row['Net Pay Feb'])
-           Net_Pay_difference = current_month_salary - current_month_salary
-           st.write(Net_Pay_difference)
-           break
-     else:
-            # If employee number is not found in the CSV file
-            st.write("Employee number not found in the CSV file.")
+     current_month_salary = int(row['Net Pay March'])
+     current_month_salary = int(row['Net Pay Feb'])
+     Net_Pay_difference = current_month_salary - current_month_salary
+     st.write(Net_Pay_difference)
+     break
+else:
+ # If employee number is not found in the CSV file
+     st.write("Employee number not found in the CSV file.")
        
