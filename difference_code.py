@@ -10,12 +10,12 @@ emp_number = st.text_input("Enter Employee Number")
 df = pd.read_csv('netpay_data.csv')
 for row in df:
      if emp_number:
-          netpay = df[df['Employee Number'] == int(emp_number)]
+          netpay = df[df['Employee Number'] == int(emp_number)]x
+          netpay_diff = df['Netpay_Diff']
           st.write("Employee Data Found")
           st.write(netpay)
           # getting Difference
-          netpay_diff = df['Netpay_Diff']
-          st.write("The net pay difference for the given employee number {} is:",netpay_diff)
+          st.write("The net pay difference for the given employee number {} is:".format(netpay_diff))
   
 
         
