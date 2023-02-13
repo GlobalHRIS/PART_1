@@ -1,5 +1,10 @@
 import streamlit as st
 import pandas as pd
+          
+st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
+st.image("logo.png", width = 400)
+st.title("Global HR Implementation Services Limited \n Net Pay Difference Calculator")
+emp_number = st.text_input("Enter Employee Number")    
 
 # Load the employee data from a CSV file into a Pandas DataFrame
 df = pd.read_csv('netpay_data.csv')
@@ -12,11 +17,7 @@ for row in df:
           previous_month_salary = int(df['Net Pay Feb'])
           difference = current_month_salary - previous_month_salary
           st.write("The net pay difference for employee number {} is:".format(employee_number), difference)
-          
-st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
-st.image("logo.png", width = 400)
-st.title("Global HR Implementation Services Limited \n Net Pay Difference Calculator")
-emp_number = st.text_input("Enter Employee Number")       
+   
           
           #current_month_salary = int(row['Net Pay March'])
           #previous_month_salary = int(row['Net Pay Feb'])
