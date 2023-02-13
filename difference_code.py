@@ -15,7 +15,7 @@ for row in df:
           st.write(netpay)
           #current_month_salary = df['Net Pay March']
           #previous_month_salary = df['Net Pay Feb']
-          difference = df['Net Pay March'] - df['Net Pay Feb']
+          difference = df[df['Net Pay March'] - df['Net Pay Feb']]
           st.write("The net pay difference for employee number {} is:".format(emp_number), difference)   
 
 
