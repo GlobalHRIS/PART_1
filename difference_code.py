@@ -14,9 +14,7 @@ for row in df:
           st.write("Employee Data Found")
           st.write(netpay)
           # getting Difference
-          df['netpay_diff'] = df['Net Pay March'].sub[df['Net Pay Feb']]
-        
-          #netpay_diff = df[df['Net Pay March']- df['Net Pay Feb']]
+          netpay_diff = df['Netpay_Diff']
           st.write("The net pay difference for the given employee number {} is:",netpay_diff)
   
 
