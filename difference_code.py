@@ -19,7 +19,7 @@ if uploaded_file is not None:
     st.write("Original DataFrame")
     st.write(df)
 column1 = st.selectbox("Select the current month netpay", df.columns)
-column2 = st.selectbox("Select the previous month netpay, df.columns)
+column2 = st.selectbox("Select the previous month netpay", df.columns)
     
 new_column_name = st.text_input("Enter the name of the new column", "netpaydifference")
     
