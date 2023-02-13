@@ -5,11 +5,7 @@ import numpy as np
 st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 st.image("logo.png", width = 400)
 st.title("Global HR Implementation Services Limited \n Net Pay Difference Calculator")
-emp_number = st.text_input("Enter Employee Number")    
-
-
-import streamlit as st
-import pandas as pd
+   
 
 st.write("Please upload a csv file to perform the operation")
 uploaded_file = st.file_uploader("Choose a csv file", type=["csv"])
