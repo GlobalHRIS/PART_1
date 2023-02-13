@@ -14,7 +14,7 @@ def calculate_difference():
     if emp_number:
         d = df[df['Employee_number'] == int(emp_number)]
         df['Net Pay Difference'] = df['Net Pay March'] - df['Net Pay Feb']
-        st.write("The net pay difference for employee number {} is: ".format(emp_number, Net Pay Difference)) 
+        st.write(Net Pay Difference) 
     else:
 # Call the calculate_difference function
 calculate_difference()
