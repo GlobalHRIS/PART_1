@@ -9,9 +9,9 @@ emp_number = st.text_input("Enter Employee Number")
 # Load the employee data from a CSV file into a Pandas DataFrame
 df = pd.read_csv('netpay_data.csv')
 
-if emp_number:
-     data = df[df['Employee Number'] == int(emp_number)]
-     for row in df:
+for row in df:
+     if emp_number:
+          data = df[df['Employee Number'] == int(emp_number)]
           current_month_salary = int(row['Net Pay March'])
           current_month_salary = int(row['Net Pay Feb'])
           Net_Pay_difference = current_month_salary - current_month_salary
