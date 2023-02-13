@@ -9,7 +9,7 @@ emp_number = st.text_input("Enter Employee Number")
 # Load the employee data from a CSV file into a Pandas DataFrame
 df = pd.read_csv('netpaydata.csv')
 
-def calculate_difference()
+def calculate_difference():
     # Calculate the net pay difference between February and March
     if emp_number:
         d = df['Employee_number'] == int(emp_number)]
