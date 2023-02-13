@@ -7,10 +7,10 @@ st.title("Global HR Implementation Services Limited \n Net Pay Difference Calcul
 emp_number = st.text_input("Enter Employee Number")
 
 # Load the employee data from a CSV file into a Pandas DataFrame
-df = pd.read_csv('netpaydata.csv')
+df = pd.read_csv('netpay_data.csv')
 
 for row in df:
-     if row['Employee_number'] == str(employee_number):
+     if row['Employee Number'] == str(emp_number):
            current_month_salary = int(row['Net Pay March'])
            previous_month_salary = int(row['Net Pay Feb'])
            Net_Pay_difference = df['Net Pay March'] - df['Net Pay Feb']
