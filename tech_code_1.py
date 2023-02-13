@@ -7,11 +7,8 @@ st.image("logo.png", width = 400)
 st.title("Global HR Implementation Services Limited \n AI Employee Net Pay Difference Calculator")
 employee_number = st.text_input("Enter the employee number:")
 
-# Call the calculate_difference function
-#calculate_difference(employee_number)
 
-#def calculate_difference(employee_number):
-df1 = pd.read_csv('netpaydata.csv',encoding='cp1252')
+df1 = pd.read_csv('netpaydata.csv')
 for row in df1:
         if df1[df1['Employee_number'] == int(employee_number)]:
                 current_month_salary = int(row['Net Pay March'])
