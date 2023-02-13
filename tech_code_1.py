@@ -4,7 +4,7 @@ import csv
 # Streamlit User Interface part
 st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 st.image("logo.png", width = 400)
-st.title("Global HR Implementation Services Limited \n AI Employee Net Pay Difference Calculator")
+st.title("Global HR Implementation Services Limited \n Net Pay Difference Calculator")
 
 # Get the employee number from the user
 employee_number = st.text_input("Enter the employee number:")
@@ -17,7 +17,7 @@ for row in reader:
            current_month_salary = int(row['Net Pay March'])
            previous_month_salary = int(row['Net Pay Feb'])
            break
-      else:
+     else:
          # If employee number is not found in the CSV file
           st.write("Employee number not found in the CSV file.")
           return
