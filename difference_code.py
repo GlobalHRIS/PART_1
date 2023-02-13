@@ -10,20 +10,15 @@ emp_number = st.text_input("Enter Employee Number")
 df = pd.read_csv('netpay_data.csv')
 for row in df:
      if emp_number:
-          netpay = df[df['Employee Number'] == int(emp_number)]
-          st.write("Employee Data Found")
-          st.write(netpay)
-        
-for row in df:
+           st.write("Employee Data Found")
            current_month_salary = int(row['Net Pay March'])
            st.write(current_month_salary)
            previous_month_salary = int(row['Net Pay Feb'])
            st.write(previous_month_salary)
            break
   
-
-  
-
+          #netpay = df[df['Employee Number'] == int(emp_number)]
+      
         
         #df['netpaydiff'] = df.apply(lambda x: diff(x['Net Pay March'], x['Net Pay Feb']), axis=1)
           #current_month_netpay = int(df['Net Pay March'])
