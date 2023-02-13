@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import numpy as np
           
 st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 st.image("logo.png", width = 400)
@@ -13,7 +14,8 @@ for row in df:
            netpay = df[df['Employee Number'] == int(emp_number)]
            st.write("Employee Data Found")
            st.write(netpay)
-           netpay_diff = df[df['Net Pay March'] - df['Net Pay Feb']]
+         
+           netpay_diff = df[df['Netpay_Diff']]
            st.write(netpay_diff)
   
           #netpay = df[df['Employee Number'] == int(emp_number)]
