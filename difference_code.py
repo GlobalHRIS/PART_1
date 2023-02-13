@@ -15,3 +15,6 @@ for row in df:
           st.write(netpay)
           difference = df[df['Net Pay March'] - df['Net Pay Feb']]
           st.write("The net pay difference for employee number {} is:".format(emp_number), difference)   
+          return
+      else:
+         st.write("Employee Data not found")           
