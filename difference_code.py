@@ -1,5 +1,9 @@
 import streamlit as st
 import pandas as pd
+st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
+st.image("logo.png", width = 400)
+st.title("Global HR Implementation Services Limited \n AI Employee Net Pay Difference Calculator")
+emp_number = st.text_input("Enter Employee Number")
 
 def calculate_difference():
     # Load the employee data from a CSV file into a Pandas DataFrame
@@ -13,4 +17,6 @@ def calculate_difference():
     st.write(df)
 
 # Call the calculate_difference function
-calculate_difference()
+if emp_number:
+    data = df[df['Employee_number'] == int(emp_number)]
+    calculate_difference()
