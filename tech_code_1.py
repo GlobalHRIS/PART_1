@@ -8,18 +8,18 @@ st.title("Global HR Implementation Services Limited \n AI Employee Net Pay Diffe
 employee_number = st.text_input("Enter the employee number:")
 
 # Call the calculate_difference function
-calculate_difference(employee_number)
+#calculate_difference(employee_number)
 
-def calculate_difference(employee_number):
-        df1 = pd.read_csv('netpaydata.csv',encoding='cp1252')
-        for row in df1:
-            if df1[df1['Employee_number'] == int(employee_number)]:
+#def calculate_difference(employee_number):
+df1 = pd.read_csv('netpaydata.csv',encoding='cp1252')
+for row in df1:
+        if df1[df1['Employee_number'] == int(employee_number)]:
                 current_month_salary = int(row['Net Pay March'])
                 previous_month_salary = int(row['Net Pay Feb'])
                 difference = current_month_salary - previous_month_salary
                 st.write("The net pay difference for employee number {} is:".format(employee_number), difference)
                 break
-            else:
+          else:
                 st.write("Employee number not found in the CSV file.")
                 return
         
