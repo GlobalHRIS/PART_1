@@ -14,7 +14,7 @@ for row in df:
           st.write("Employee Data Found")
           diff = df['Netpay_Diff']
           netpay_diff = int(row['Netpay_Diff'])
-          st.write("The net pay difference for the given employee number {} is:".format(emp_number),netpay_diff))
+          st.write("The net pay difference for the given employee number {} is:".format(emp_number),netpay_diff)
           st.write(netpay)
     
 
