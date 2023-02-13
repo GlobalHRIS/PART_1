@@ -13,6 +13,6 @@ for row in df:
           netpay = df[df['Employee Number'] == int(emp_number)]
           st.write("Employee Data Found")
           st.write(netpay)
-          netpaydiff =int(df['Netpay_Diff'])
+          netpaydiff = df['Netpay_Diff']
           st.write("The net pay difference for employee number {} is:".format(emp_number),Netpaydiff)   
                
