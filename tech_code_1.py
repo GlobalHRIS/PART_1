@@ -6,11 +6,11 @@ def calculate_difference(employee_number):
     reader = pd.read_csv('netpaydata.csv',encoding='cp1252')
         
         # Loop through each row in the CSV file
-        for row in reader:
-            if row['Employee_number'] == int(employee_number):
-                current_month_salary = int(row['Net Pay March'])
-                previous_month_salary = int(row['Net Pay Feb'])
-                break
+    for row in reader:
+        if row['Employee_number'] == int(employee_number):
+             current_month_salary = int(row['Net Pay March'])
+             previous_month_salary = int(row['Net Pay Feb'])
+             break
         else:
             # If employee number is not found in the CSV file
             st.write("Employee number not found in the CSV file.")
