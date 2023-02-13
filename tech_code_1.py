@@ -3,12 +3,11 @@ import pandas as pd
 
 def calculate_difference(employee_number):
     # Open the CSV file containing employee data
-    reader = pd.read_csv('netpaydata.csv',encoding='cp1252')
+    df1 = pd.read_csv('netpaydata.csv',encoding='cp1252')
         
         # Loop through each row in the CSV file
-    for row in reader:
-        #if df1[df1['Employee Number'] == int(emp_number)]
-        if reader[row['Employee_number'] == int(employee_number)]:
+    for row in df1:
+        if df1[df1['Employee_number'] == int(emp_number)]:
              current_month_salary = int(row['Net Pay March'])
              previous_month_salary = int(row['Net Pay Feb'])
              break
