@@ -19,7 +19,7 @@ for row in df1:
                 difference = current_month_salary - previous_month_salary
                 st.write("The net pay difference for employee number {} is:".format(employee_number), difference)
                 break
-          else:
+        else:
                 st.write("Employee number not found in the CSV file.")
                 return
         
