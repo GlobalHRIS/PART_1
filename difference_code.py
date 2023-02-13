@@ -14,17 +14,19 @@ for row in df:
      if emp_number:
           netpay = df[df['Employee Number'] == int(emp_number)]
           st.write("Employee Data Found")
-          current_month_salary = int(row['Net Pay March'])
-          previous_month_salary = int(row['Net Pay Feb'])
+          difference= df['Net Pay March'] - df['Net Pay Feb']
+          st.write("The net pay difference for employee number {} is:".format(employee_number), difference)
+          #current_month_salary = int(row['Net Pay March'])
+          #previous_month_salary = int(row['Net Pay Feb'])
           break
      else:
          # If employee number is not found in the CSV file
-          st.write("Employee number not found in the CSV file.")
+          #st.write("Employee number not found in the CSV file.")
           
 # Calculate the difference
-difference = current_month_salary - previous_month_salary  
+#difference = current_month_salary - previous_month_salary  
 # Display the result
-st.write("The net pay difference for employee number {} is:".format(employee_number), difference)
+#st.write("The net pay difference for employee number {} is:".format(employee_number), difference)
 
 
        
