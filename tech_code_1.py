@@ -9,8 +9,8 @@ def calculate_difference(employee_number):
         # Loop through each row in the CSV file
         for row in reader:
             if row['Employee_number'] == int(employee_number):
-                current_month_salary = int(row['Current Month Salary'])
-                previous_month_salary = int(row['Previous Month Salary'])
+                current_month_salary = int(row['Net Pay March'])
+                previous_month_salary = int(row['Net Pay Feb'])
                 break
         else:
             # If employee number is not found in the CSV file
