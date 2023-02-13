@@ -11,11 +11,13 @@ emp_number = st.text_input("Enter Employee Number")
 df = pd.read_csv('netpay_data.csv')
 for row in df:
      if emp_number:
-           netpay = df[df['Employee Number'] == int(emp_number)]
-           netpay_diff = netpay.df['Netpay_Diff']
-           st.write(netpay_diff)
+           df['netpay'] = df[df['Employee Number'] == int(emp_number)]
            st.write("Employee Data Found")
            st.write(netpay)
+           netpay_diff = df['Netpay_Diff']
+           st.write(netpay_diff)
+           
+          
            
   
 
