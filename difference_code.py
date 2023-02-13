@@ -12,16 +12,15 @@ uploaded_file = st.file_uploader("Choose a csv file", type=["csv"])
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
-    emp_number = st.text_input("Enter Employee Number") 
-    for row in df:
-        if emp_number:
-                empdata = df[df['Employee Number'] == int(emp_number)]    
-                column1 = st.selectbox("Select the current month netpay", df.columns)
-                column2 = st.selectbox("Select the previous month netpay", df.columns)
-                new_column_name = st.text_input("Enter the name of the new column", "netpaydifference")
-                df[new_column_name] = df[column1] - df[column2]
-                st.write("Resultant DataFrame")
-                st.write(df)
+emp_number = st.text_input("Enter Employee Number") 
+if emp_number:
+         empdata = df[df['Employee Number'] == int(emp_number)]    
+         column1 = st.selectbox("Select the current month netpay", df.columns)
+         column2 = st.selectbox("Select the previous month netpay", df.columns)
+         new_column_name = st.text_input("Enter the name of the new column", "netpaydifference")
+         df[new_column_name] = df[column1] - df[column2]
+         st.write("Resultant DataFrame")
+         st.write(df)
                 
                 
                 
