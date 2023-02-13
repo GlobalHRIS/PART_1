@@ -11,7 +11,7 @@ df = pd.read_csv('netpay_data.csv')
 
 
 for row in df:
-     if row['Employee Number'] == str(emp_number):
+     if df[row['Employee Number']] == str(emp_number):
            current_month_salary = int(row['Net Pay March'])
            previous_month_salary = int(row['Net Pay Feb'])
            break
