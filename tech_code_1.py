@@ -20,7 +20,7 @@ for row in reader:
      else:
          # If employee number is not found in the CSV file
           st.write("Employee number not found in the CSV file.")
-          return
+          
         
 # Calculate the difference
 difference = current_month_salary - previous_month_salary  
