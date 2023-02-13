@@ -7,7 +7,7 @@ def calculate_difference(employee_number):
         
         # Loop through each row in the CSV file
     for row in df1:
-        if df1[df1['Employee_number'] == int(emp_number)]:
+        if df1[df1['Employee_number'] == int(employee_number)]:
              current_month_salary = int(row['Net Pay March'])
              previous_month_salary = int(row['Net Pay Feb'])
              break
