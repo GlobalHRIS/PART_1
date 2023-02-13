@@ -14,10 +14,7 @@ for row in df:
              current_month_salary = int(row['Net Pay Feb'])
              previous_month_salary = int(row['Net Pay March'])
              break
-      else:
-            # If employee number is not found in the CSV file
-            st.write("Employee number not found in the CSV file.")
-            return
+     
         
     # Calculate the difference
     difference = current_month_salary - previous_month_salary
@@ -29,8 +26,7 @@ for row in df:
                     
                     
                     
-                    
-                    
+          
                     
                     
                     
