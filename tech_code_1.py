@@ -23,7 +23,7 @@ for row in df1:
         return
         
  # Calculate the difference
- difference = current_month_salary - previous_month_salar
+ difference = current_month_salary - previous_month_salary
  # Display the result
  st.write("The net pay difference for employee number {} is:".format(employee_number), difference)
 
