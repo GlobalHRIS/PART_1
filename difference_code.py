@@ -13,9 +13,9 @@ for row in df:
           netpay = df[df['Employee Number'] == int(emp_number)]
           st.write("Employee Data Found")
           st.write(netpay)
-          current_month_netpay = int(row['Net Pay March'])
+          current_month_netpay = int(df['Net Pay March'])
           st.write(current_month_netpay)
-          previous_month_netpay = int(row['Net Pay Feb'])
+          previous_month_netpay = int(df['Net Pay Feb'])
           st.write(previous_month_netpay)
           # Calculate the difference
           netpaydiff = current_month_netpay - previous_month_netpay
