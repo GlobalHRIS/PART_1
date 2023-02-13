@@ -13,7 +13,7 @@ for row in df:
            netpay = df[df['Employee Number'] == int(emp_number)]
            st.write("Employee Data Found")
            st.write(netpay)
-           netpay_diff = df[row['Net Pay March'] - row['Net Pay Feb']]
+           netpay_diff = emp_number.[df['Net Pay March'] - df['Net Pay Feb']]
            st.write(netpay_diff)
   
           #netpay = df[df['Employee Number'] == int(emp_number)]
