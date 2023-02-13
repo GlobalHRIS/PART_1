@@ -13,11 +13,11 @@ for row in df:
           netpay = df[df['Employee Number'] == int(emp_number)]
           st.write("Employee Data Found")
           st.write(netpay)
-          #current_month_salary = df['Net Pay March']
-          #previous_month_salary = df['Net Pay Feb']
-          difference =  int(df['Net Pay March'] - df['Net Pay Feb'])
-          st.write("The net pay difference for emplointyee number {} is:".format(employee_number), difference)
-   
+          current_month_salary = df['Net Pay March']
+          previous_month_salary = df['Net Pay Feb']
+         
+difference = current_month_salary -  previous_month_salary 
+st.write("The net pay difference for emplointyee number {} is:".format(employee_number), difference)   
           
           #current_month_salary = int(row['Net Pay March'])
           #previous_month_salary = int(row['Net Pay Feb'])
