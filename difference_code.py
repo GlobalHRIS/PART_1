@@ -20,10 +20,7 @@ for row in df:
            previous_month_salary = int(row['Net Pay Feb'])
            st.write(previous_month_salary)
            break
-     else:
-         # If employee number is not found in the CSV file
-          st.write("Employee number not found in the CSV file.")
-    
+  
 
   
 
