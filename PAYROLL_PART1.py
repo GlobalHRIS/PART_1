@@ -25,6 +25,12 @@ if emp_number:
     st.write(feb)
     st.write("""### March employee data""")
     st.write(Mar)
-    netpay_diff = df1[df1[['Net Pay']]-df2[['Net Pay']]]
-    st.write(netpay_diff)
+    current_month_salary = int(row['Net Pay March'])
+    previous_month_salary = int(row['Net Pay Feb'])
+    difference = current_month_salary - previous_month_salary
+    st.write("The net pay difference for employee number {} is:".format(employee_number), difference)  
+else:
+    st.write("Employee number not found in the CSV file.")
+                
+    
 
