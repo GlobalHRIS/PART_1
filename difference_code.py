@@ -18,5 +18,5 @@ def calculate_difference():
 
 # Call the calculate_difference function
 if emp_number:
-    data = df[df['Employee_number'] == int(emp_number)]
+    data = df[df['Employee_number'] == str(emp_number)]
     calculate_difference()
