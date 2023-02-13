@@ -23,7 +23,7 @@ emp_number = st.text_input("Enter Employee Number")
 for row in df:
         if emp_number:
                 empdata = df[df['Employee Number'] == int(emp_number)]
-                df[netpaydifference] = df[Net Pay March] - df[Net Pay Feb]
+                df[netpaydifference] = df['Net Pay March'] - df['Net Pay Feb']
                 st.write("Resultant DataFrame")
                 st.write(df)
 
