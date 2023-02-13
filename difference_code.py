@@ -10,6 +10,13 @@ emp_number = st.text_input("Enter Employee Number")
 df = pd.read_csv('netpaydata.csv')
 
 for row in df:
-    if df['Employee_number'] == int(emp_number):
-        Net_Pay_difference = df['Net Pay March'] - df['Net Pay Feb']
-        st.write(Net_Pay_difference)
+     if row['Employee_number'] == str(employee_number):
+           current_month_salary = int(row['Net Pay March'])
+           previous_month_salary = int(row['Net Pay Feb'])
+           Net_Pay_difference = df['Net Pay March'] - df['Net Pay Feb']
+           st.write(Net_Pay_difference)
+           break
+     else:
+            # If employee number is not found in the CSV file
+            st.write("Employee number not found in the CSV file.")
+       
