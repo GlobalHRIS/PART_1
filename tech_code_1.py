@@ -21,7 +21,7 @@ for row in df1:
                 break
         else:
                 st.write("Employee number not found in the CSV file.")
-                return
+                
         
  
 
