@@ -11,5 +11,4 @@ df = pd.read_csv('netpaydata.csv')
 
 if emp_number:
     df['Net Pay Difference'] = df['Net Pay March'] - df['Net Pay Feb']
-    st.write(Netpay_Diff)
     
