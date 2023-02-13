@@ -11,7 +11,7 @@ st.title("Global HR Implementation Services Limited \n Net Pay Difference Calcul
 employee_number = st.text_input("Enter the employee number:")
 # Open the CSV file containing employee data
 with open('netpaydata.csv', 'r') as file:
-     reader = csv.DictReader(file)
+     reader = pd.read_csv(file)
 # Loop through each row in the CSV file
 for row in reader:
      if row['Employee_number'] == int(employee_number):
