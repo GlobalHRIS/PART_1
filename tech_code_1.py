@@ -10,7 +10,7 @@ st.title("Global HR Implementation Services Limited \n AI Employee Net Pay Diffe
 employee_number = st.text_input("Enter the employee number:")
 # Open the CSV file containing employee data
 with open('netpaydata.csv', 'r') as file:
-reader = csv.DictReader(file)
+     reader = csv.DictReader(file)
 # Loop through each row in the CSV file
 for row in reader:
      if row['Employee_number'] == str(employee_number):
