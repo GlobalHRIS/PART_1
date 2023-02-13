@@ -15,12 +15,12 @@ def calculate_difference():
     
     # Display the result
     st.write("Net pay difference between February and March:")
-    st.write(df)
+    
 
 # Call the calculate_difference function
 if emp_number:
     calculate_difference()
-    break
+    
 else:
     st.write(" Employee Number not found")
     
