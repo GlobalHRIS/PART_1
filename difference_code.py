@@ -14,6 +14,4 @@ for row in df:
           st.write("Employee Data Found")
           st.write(netpay)
           st.write("The net pay difference for employee number {} is:".format(emp_number),Netpay_Diff)   
-          break
-     elif !emp_number:
-         st.write("Employee Data not found")           
+               
