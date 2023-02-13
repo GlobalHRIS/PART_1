@@ -15,7 +15,7 @@ for row in df:
           st.write("Employee Data Found")
           st.write(netpay)
           # getting Difference
-          st.write("The net pay difference for the given employee number {} is:".format(emp_number),netpay_diff))
+          st.write("The net pay difference for the given employee number {} is:".format(emp_number),netpay_diff)
   
 
         
