@@ -17,9 +17,8 @@ for row in df:
           st.write(current_month_netpay)
           previous_month_netpay = row['Net Pay Feb']
           st.write(previous_month_netpay)
-          break
-          
-# Calculate the difference
-netpaydiff = current_month_netpay - previous_month_netpay
-# Display the result
-st.write("The net pay difference for employee number {} is:".format(emp_number), netpaydiff)
+          # Calculate the difference
+          netpaydiff = current_month_netpay - previous_month_netpay
+          # Display the result
+          st.write("The net pay difference for employee number {} is:".format(emp_number), netpaydiff)
+  
