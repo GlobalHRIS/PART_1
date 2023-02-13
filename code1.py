@@ -9,9 +9,9 @@ def calculate_difference(df, employee_name):
     return difference
 
 def suggest_reason(difference):
-    if difference > 0:
+    if difference > 0.01:
         return "The increase in net pay may be due to a raise, overtime pay, or a bonus."
-    elif difference < 0:
+    elif difference < 0.05:
         return "The decrease in net pay may be due to a deduction, such as taxes or insurance."
     else:
         return "The net pay has not changed."
