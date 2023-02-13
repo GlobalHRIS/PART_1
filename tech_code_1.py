@@ -24,7 +24,7 @@ def calculate_difference(employee_number):
     st.write("The net pay difference for employee number {} is:".format(employee_number), difference)
 
 # Get the employee number from the user
-employee_number = st.number_input("Enter the employee number:")
+employee_number = st.text_input("Enter the employee number:")
 
 # Call the calculate_difference function
 calculate_difference(employee_number)
