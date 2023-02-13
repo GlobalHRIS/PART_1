@@ -14,12 +14,13 @@ for row in df:
            netpay = df[df['Employee Number'] == int(emp_number)]
            st.write("Employee Data Found")
            st.write(netpay)
-         
-           netpay_diff = df[df['Netpay_Diff']]
+           netpay_diff = df['Netpay_Diff']
            st.write(netpay_diff)
   
+
+
+
           #netpay = df[df['Employee Number'] == int(emp_number)]
-      
         
         #df['netpaydiff'] = df.apply(lambda x: diff(x['Net Pay March'], x['Net Pay Feb']), axis=1)
           #current_month_netpay = int(df['Net Pay March'])
