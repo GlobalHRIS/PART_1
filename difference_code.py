@@ -9,11 +9,9 @@ emp_number = st.text_input("Enter Employee Number")
 # Load the employee data from a CSV file into a Pandas DataFrame
 df = pd.read_csv('netpaydata.csv')
 
-def calculate_difference():
-    # Calculate the net pay difference between February and March
-    if emp_number:
-        df['Net Pay Difference'] = df['Net Pay March'] - df['Net Pay Feb']
-        st.write(Netpay_Diff) 
+if emp_number:
+    df['Net Pay Difference'] = df['Net Pay March'] - df['Net Pay Feb']
+    st.write(Netpay_Diff) 
        
 # Call the calculate_difference function
 calculate_difference()
