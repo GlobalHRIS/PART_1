@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from streamlit.scriptrunner.script_run_context import get_script_run_ctx
 
 # Get the employee number from the user
 st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
