@@ -12,7 +12,7 @@ df = pd.read_csv('netpaydata.csv')
 def calculate_difference():
     # Calculate the net pay difference between February and March
     if emp_number:
-        d = df['Employee_number'] == int(emp_number)]
+        d = df[df['Employee_number'] == int(emp_number)]
         df['Net Pay Difference'] = df['Net Pay March'] - df['Net Pay Feb']
         st.write("The net pay difference for employee number {} is: ".format(emp_number, Net Pay Difference)) 
     else:
