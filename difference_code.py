@@ -15,7 +15,6 @@ if emp_number:
      current_month_salary = int(row['Net Pay Feb'])
      Net_Pay_difference = current_month_salary - current_month_salary
      st.write(Net_Pay_difference)
-     break
 else:
  # If employee number is not found in the CSV file
      st.write("Employee number not found in the CSV file.")
