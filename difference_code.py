@@ -12,7 +12,7 @@ df = pd.read_csv('netpay_data.csv')
 for row in df:
      if emp_number:
            netpay = df[df['Employee Number'] == int(emp_number)]
-           netpay_diff = df['Netpay_Diff']
+           netpay_diff = df['Netpay_Diff'],iloc[5]
            st.write(netpay_diff)
            st.write("Employee Data Found")
            st.write(netpay)
