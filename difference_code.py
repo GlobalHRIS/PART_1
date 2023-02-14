@@ -1,12 +1,16 @@
+#Importing Libraries
 import streamlit as st
 import pandas as pd
-import numpy as np
-          
+
+
+# Streamlit Dashboard          
 st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 st.image("logo.png", width = 400)
 st.title("Global HR Implementation Services Limited \n Net Pay Difference Calculator")
-st.write("Please upload a csv file")
 
+
+# Uploading the input file
+st.write("Please upload a csv file")
 uploaded_file = st.file_uploader("Choose a csv file", type=["csv"])
 
 if uploaded_file is not None:
