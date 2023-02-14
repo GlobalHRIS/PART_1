@@ -25,12 +25,7 @@ if uploaded_file is not None:
                  st.write(empdata)   
                  break
                     
-                    
-                    #current_month_salary = df['Net Pay Feb']
-                    #previous_month_salary = df['Net Pay March']
-                    #difference = current_month_salary.sub(previous_month_salary)
-                    #st.write("The net pay difference for employee number {} is:".format(emp_number), difference)
-                    #break
+   
      
 
        
