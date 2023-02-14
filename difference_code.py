@@ -7,20 +7,30 @@ st.image("logo.png", width = 400)
 st.title("Global HR Implementation Services Limited \n Net Pay Difference Calculator")
    
 
+import streamlit as st
+import pandas as pd
+
+st.title("Subtract Column Values in a Pandas DataFrame")
+
 st.write("Please upload a csv file to perform the operation")
+
 uploaded_file = st.file_uploader("Choose a csv file", type=["csv"])
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
-emp_number = st.text_input("Enter Employee Number") 
-if emp_number:
-         empdata = df[df['Employee Number'] == int(emp_number)]    
-         column1 = st.selectbox("Select the current month netpay", df.columns)
-         column2 = st.selectbox("Select the previous month netpay", df.columns)
-         new_column_name = st.text_input("Enter the name of the new column", "netpaydifference")
-         df[new_column_name] = df[column1] - df[column2]
-         st.write("Resultant DataFrame")
-         st.write(df)
+    st.write("Original DataFrame")
+    st.write(df)
+    
+    column1 = st.selectbox("Select the first column", df.columns)
+    column2 = st.selectbox("Select the second column", df.columns)
+    
+    new_column_name = st.text_input("Enter the name of the new column", "Result")
+    
+    df[new_column_name] = df[column1] - df[column2]
+    
+    st.write("Resultant DataFrame")
+    st.write(df)
+
                 
                 
                 
