@@ -1,33 +1,4 @@
-Skip to content
-Search or jump to…
-Pulls
-Issues
-Codespaces
-Marketplace
-Explore
- 
-@GlobalHRIS 
-Jcharis
-/
-Streamlit_DataScience_Apps
-Public
-Fork your own copy of Jcharis/Streamlit_DataScience_Apps
-Code
-Issues
-2
-Pull requests
-15
-Actions
-Projects
-Security
-Insights
-Streamlit_DataScience_Apps/EDA_app_with_Streamlit_Components/app.py /
-@Jcharis
-Jcharis Pandas Profiling and Sweetviz with Streamlit Component
-Latest commit 82a5d1f on Jul 15, 2020
- History
- 1 contributor
-290 lines (234 sloc)  7.72 KB
+
 
 # Core Pkgs
 import streamlit as st 
@@ -286,17 +257,4 @@ def main():
 
 if __name__ == '__main__':
 	main()
-Footer
-© 2023 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
