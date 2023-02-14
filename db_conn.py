@@ -1,31 +1,35 @@
 import streamlit as st
-from sqlalchemy import create_engine
 import pandas as pd
+import mysql.connector
 
-# Define database connection string
-db_connection_string = "mysql+pymysql://username:password@host:port/database_name"
+# Set up MySQL connection
+mydb = mysql.connector.connect(
+  host="localhost",
+  user="root",
+  password="LeakTimeBike4242",
+  database="globalhris"
+)
 
-# Define table name and column names
-table_name = "netpay_table"
-#column_names = ["col1", "col2", "col3"]
+# Define function to insert data into MySQL table
+def insert_data(table_name, data):
+    cursor = mydb.cursor()
+    cols = "`,`".join([str(i) for i in data.columns.tolist()])
+    for i,row in data.iterrows():
+        sql = "INSERT INTO " + table_name + " (`" +cols + "`) VALUES (" + "%s,"*(len(row)-1) + "%s)"
+        cursor.execute(sql, tuple(row))
+        mydb.commit()
 
 # Streamlit app
-def main():
-    st.title("Upload data to MySQL database")
-    
-    # Upload CSV file
-    file = st.file_uploader("Choose a CSV file")
-    if file is not None:
-        df = pd.read_csv(file)
-        st.write("Preview of data:")
-        st.write(df.head())
-        
-        # Connect to database
-        engine = create_engine(db_connection_string)
-        
-        # Insert data into database
-        df.to_sql(table_name, con=engine, if_exists="append", index=False)
-        st.write("Data uploaded to database.")
+st.title("Upload CSV to MySQL")
 
-if __name__ == "__main__":
-    main()
+# Get user input
+file = st.file_uploader("Choose a CSV file", type="csv")
+table_name = st.text_input("Enter table name")
+
+# Process file and insert data into MySQL
+if file is not None:
+    data = pd.read_csv(file)
+    st.write(data)
+    if st.button("Insert into MySQL"):
+        insert_data(table_name, data)
+        st.success("Data inserted into MySQL!")
