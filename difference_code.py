@@ -13,7 +13,7 @@ if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
     column1 = st.selectbox("Select the first column", df.columns)
     column2 = st.selectbox("Select the second column", df.columns)
-    new_column_name = st.text_input("Enter the name of the new column", "Result")
+    new_column_name = st.text_input("Enter the name of the new column", "Net Pay Difference")
     df[new_column_name] = df[column1] - df[column2]
     #st.write("Net Pay Difference of all the Employees")
     #st.write(df)
@@ -21,8 +21,8 @@ if uploaded_file is not None:
     for row in df:
         if emp_number:
                  empdata = df[df['Employee Number'] == int(emp_number)]
-                 st.write(empdata)
-                 st.write("The net pay difference for employee number {} is:".format(emp_number), netpaydifference)
+                 st.write("The net pay difference for employee number {} is:".format(emp_number))
+                 st.write(empdata)   
                  break
                     
                     
