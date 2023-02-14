@@ -19,23 +19,13 @@ if uploaded_file is not None:
     st.write(df)
 
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-
-# Load the employee data from a CSV file into a Pandas DataFrame
-#df = pd.read_csv('netpay_data.csv')
-#for row in df:
-          #if emp_number:
-                    #empdata = df[df['Employee Number'] == int(emp_number)]
-                    #st.write(empdata)
+for row in df:
+        if emp_number:
+                 empdata = df[df['Employee Number'] == int(emp_number)]
+                 st.write(empdata)
+                 break
+                    
+                    
                     #current_month_salary = df['Net Pay Feb']
                     #previous_month_salary = df['Net Pay March']
                     #difference = current_month_salary.sub(previous_month_salary)
