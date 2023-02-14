@@ -17,9 +17,7 @@ if uploaded_file is not None:
     df[new_column_name] = df[column1] - df[column2]
     st.write("Net Pay Difference of all the Employees")
     st.write(df)
-
-                
-for row in df:
+    for row in df:
         if emp_number:
                  empdata = df[df['Employee Number'] == int(emp_number)]
                  st.write(empdata)
