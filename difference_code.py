@@ -5,29 +5,16 @@ import numpy as np
 st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 st.image("logo.png", width = 400)
 st.title("Global HR Implementation Services Limited \n Net Pay Difference Calculator")
-   
-
-import streamlit as st
-import pandas as pd
-
-st.title("Subtract Column Values in a Pandas DataFrame")
-
 st.write("Please upload a csv file to perform the operation")
 
 uploaded_file = st.file_uploader("Choose a csv file", type=["csv"])
 
 if uploaded_file is not None:
     df = pd.read_csv(uploaded_file)
-    st.write("Original DataFrame")
-    st.write(df)
-    
     column1 = st.selectbox("Select the first column", df.columns)
     column2 = st.selectbox("Select the second column", df.columns)
-    
     new_column_name = st.text_input("Enter the name of the new column", "Result")
-    
     df[new_column_name] = df[column1] - df[column2]
-    
     st.write("Resultant DataFrame")
     st.write(df)
 
