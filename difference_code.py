@@ -22,7 +22,7 @@ if uploaded_file is not None:
         if emp_number:
                  empdata = df[df['Employee Number'] == int(emp_number)]
                  st.write(empdata)
-                 st.write("The net pay difference for employee number {} is:".format(employee_number), netpaydifference)
+                 st.write("The net pay difference for employee number {} is:".format(emp_number), netpaydifference)
                  break
                     
                     
