@@ -13,12 +13,19 @@ file = st.file_uploader("Choose a file", type=["jpg", "jpeg", "png", "pdf", "csv
 
 # Set up the Streamlit interface
 st.title("Upload the input file to check the difference")
-st.write("Upload an image, PDF, or CSV file below:")
+st.write("Upload an  PDF, or CSV file below:")
 
-# Create file uploader for image, PDF, and CSV files
-file = st.file_uploader("Choose a file", type=["jpg", "jpeg", "png"] "pdf", "csv"])
+# uploading input file as payslip pdf
 
- 
+st.write("Please upload a pdf file")
+
+uploaded_pdffile = st.file_uploader("Choose a pdf file", type=["pdf"])
+if uploaded_pdffile is not None:
+    pdf = pdftotext.PDF(file)
+        first_page = pdf[0]
+        st.write(first_page)
+        break
+
 # Uploading the input csv file
 
 st.write("Please upload a csv file")
@@ -40,15 +47,7 @@ if uploaded_csvfile is not None:
                  st.write(empdata)   
                  break
                     
-# uploading input file as payslip pdf
 
-st.write("Please upload a pdf file")
-uploaded_pdffile = st.file_uploader("Choose a pdf file", type=["pdf"])
-if uploaded_pdffile is not None:
-    pdf = pdftotext.PDF(file)
-        first_page = pdf[0]
-        st.write(first_page)
-        break
      
 
        
