@@ -28,21 +28,7 @@ def read_pdf2(file):
 def load_image(image_file):
 	img = Image.open(image_file)
 	return img 
-
-def find_difference(df):
-	month1 = st.selectbox("Select the first month", df.columns)
-	month2 = st.selectbox("Select the second month", df.columns)
-	Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
-	df[Net_Pay_Diff] = df[month1] - df[month2]
-	st.write("Net Pay Difference of all the Employees")
-	st.write(df)
-	emp_number = st.text_input("Enter the employee number:")
-	for row in df:
-		if emp_number:
-			empdata = df[df['Employee Number'] == int(emp_number)]
-			st.write("The net pay difference for employee number {} is:".format(emp_number))
-			st.write(empdata) 		
-	return df		
+	
 			
 def main():
 	
@@ -50,7 +36,7 @@ def main():
 	st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 	st.image("logo.png", width = 400)
 	st.title("Global HR Implementation Services Limited \n Net Pay Difference Calculator")
-	menu = ["Home","Dataset","DocumentFiles","About"]
+	menu = ["Home","Dataset","DocumentFiles","AI Net Pay Difference Finder","About"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "Home":
@@ -69,16 +55,13 @@ def main():
 	elif choice == "Dataset":
 		st.subheader("Dataset")
 		data_file = st.file_uploader("Upload CSV",type=['csv'])
-		if st.button("Find the difference"):
+		if st.button("Process"):
 			if data_file is not None:
 				file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
 				st.write(file_details)
 				df = pd.read_csv(data_file)
-				find_difference(df)
-				                   			
-						
-   
-
+			        st.dataframe(df)
+				                   					
 
 	elif choice == "DocumentFiles":
 		st.subheader("DocumentFiles")
@@ -111,7 +94,26 @@ def main():
 				# Use the right file processor ( Docx,Docx2Text,etc)
 					raw_text = docx2txt.process(docx_file) # Parse in the uploadFile Class 
 					st.write(raw_text)
-					
+	elif choice == "AI Net Pay Difference Finder":
+		st.subheader("AI Net Pay Difference Finder")
+		csv_file = st.file_uploader("Upload File",type=['csv'])
+		if st.button("Process"):
+			if csv_file is not none:
+				df = pd.read_csv(csv_file)
+				month1 = st.selectbox("Select the first month", df.columns)
+				month2 = st.selectbox("Select the second month", df.columns)
+				Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
+				df[Net_Pay_Diff] = df[month1] - df[month2]
+				st.write("Net Pay Difference of all the Employees")
+				st.write(df)
+				emp_number = st.text_input("Enter the employee number:")
+				for row in df:
+					if emp_number:
+						empdata = df[df['Employee Number'] == int(emp_number)]
+						st.write("The net pay difference for employee number {} is:".format(emp_number))
+						st.write(empdata)
+						break
+							
 	else:
 		st.subheader("About Global HRIS")
 		st.info("Global HR Implementataion Sevices Ltd")
