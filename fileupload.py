@@ -113,10 +113,10 @@ def main():
 		st.subheader("About Global HRIS")
 		st.info("Global HR Implementataion Sevices Ltd")
 		st.text("Here at Global HRIS, we specialise in global payroll implementation services. From data migration services to payroll project management, we support clients on their digital transformation journey.")
-                st.info("+44 161 317 2903")
+		st.info("+44 161 317 2903")
 		st.info("info@globalhris.co.uk")
 		st.info("International House, 61 Mosley Street, Manchester, M2 3HZ")
-                st.info("Built with Streamlit")
+		st.info("Built with Streamlit")
 
 if __name__ == '__main__':
 	main()
