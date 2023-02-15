@@ -96,10 +96,10 @@ def main():
 					st.write(raw_text)
 	elif choice == "AI Net Pay Difference Finder":
 		st.subheader("AI Net Pay Difference Finder")
-		csv_file = st.file_uploader("Upload File",type=['csv'])
+		file = st.file_uploader("Upload File",type=["csv"])
 		if st.button("Process"):
-			if csv_file is not none:
-				df = pd.read_csv(csv_file)
+			if file is not None:
+				df = pd.read_csv(file)
 				month1 = st.selectbox("Select the first month", df.columns)
 				month2 = st.selectbox("Select the second month", df.columns)
 				Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
