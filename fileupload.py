@@ -1,4 +1,4 @@
-! pip install docx
+pip install docx
 import streamlit as st
 import streamlit.components.v1 as stc
 
