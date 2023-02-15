@@ -16,7 +16,6 @@ def read_pdf(file):
 	for i in range(count):
 		page = pdfReader.getPage(i)
 		all_page_text += page.extractText()
-
 	return all_page_text
 
 def read_pdf2(file):
@@ -37,8 +36,6 @@ def main():
 	st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 	st.image("logo.png", width = 400)
 	st.title("Global HR Implementation Services Limited \n Net Pay Difference Calculator")
-
-
 	menu = ["Home","Dataset","DocumentFiles","About"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
@@ -63,7 +60,7 @@ def main():
 				file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
 				st.write(file_details)
 				df = pd.read_csv(data_file)
-				st.dataframe(df)
+				#st.dataframe(df)
 				column1 = st.selectbox("Select the first month", df.columns)
     				column2 = st.selectbox("Select the second month", df.columns)
     				new_column_name = st.text_input("Enter the name of the new column", "Net Pay Difference")
