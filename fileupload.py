@@ -23,13 +23,27 @@ def read_pdf2(file):
 	    page = pdf.pages[0]
 	    return page.extract_text()
 
-# Fxn
+
 @st.cache
 def load_image(image_file):
 	img = Image.open(image_file)
 	return img 
 
-
+def find_difference()
+	month1 = st.selectbox("Select the first month", df.columns)
+	month2 = st.selectbox("Select the second month", df.columns)
+	Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
+	df[Net_Pay_Diff] = df[month1] - df[month2]
+	st.write("Net Pay Difference of all the Employees")
+	st.write(df)
+	emp_number = st.text_input("Enter the employee number:")
+	for row in df:
+		if emp_number:
+			empdata = df[df['Employee Number'] == int(emp_number)]
+			st.write("The net pay difference for employee number {} is:".format(emp_number))
+			st.write(empdata) 		
+			
+			
 def main():
 	
 	# Streamlit Dashboard          
@@ -60,20 +74,10 @@ def main():
 				file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
 				st.write(file_details)
 				df = pd.read_csv(data_file)
-				month1 = st.selectbox("Select the first month", df.columns)
-				month2 = st.selectbox("Select the second month", df.columns)
-				Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
-				df[Net_Pay_Diff] = df[month1] - df[month2]
-				st.write("Net Pay Difference of all the Employees")
-				st.write(df)
-				emp_number = st.text_input("Enter the employee number:")
-				for row in df:
-					if emp_number:
-						empdata = df[df['Employee Number'] == int(emp_number)]
-						st.write("The net pay difference for employee number {} is:".format(emp_number))
-						st.write(empdata)                    			
-						break
-                    
+				find_difference()
+				                   			
+						
+   
 
 
 	elif choice == "DocumentFiles":
