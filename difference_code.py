@@ -21,10 +21,10 @@ st.write("Please upload a pdf file")
 
 uploaded_pdffile = st.file_uploader("Choose a pdf file", type=["pdf"])
 if uploaded_pdffile is not None:
-    pdf = pdftotext.PDF(file)
-    first_page = pdf[0]
-    st.write(first_page)
-    break
+        pdf = pdftotext.PDF(file)
+        first_page = pdf[0]
+        st.write(first_page)        
+    
 
 # Uploading the input csv file
 
