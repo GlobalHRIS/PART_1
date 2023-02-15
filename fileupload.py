@@ -55,7 +55,7 @@ def main():
 	elif choice == "Dataset":
 		st.subheader("Dataset")
 		data_file = st.file_uploader("Upload CSV",type=['csv'])
-		if st.button("Process"):
+		if st.button("Find the difference"):
 			if data_file is not None:
 				file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
 				st.write(file_details)
@@ -112,11 +112,11 @@ def main():
 	else:
 		st.subheader("About Global HRIS")
 		st.info("Global HR Implementataion Sevices Ltd")
-		st.text("Here at Global HRIS, we specialise in global payroll implementation services. From data migration services to payroll project management, we support clients on their digital transformation journey.")
+		st.text("Here at Global HRIS, we specialise in global payroll implementation services. \n From data migration services to payroll project management. \n we support clients on their digital transformation journey.")
 		st.info("+44 161 317 2903")
 		st.info("info@globalhris.co.uk")
 		st.info("International House, 61 Mosley Street, Manchester, M2 3HZ")
-		st.info("Built with Streamlit")
+		
 
 if __name__ == '__main__':
 	main()
