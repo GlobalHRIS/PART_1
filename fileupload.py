@@ -109,7 +109,6 @@ def main():
 					raw_text = docx2txt.process(docx_file) # Parse in the uploadFile Class 
 					st.write(raw_text)
 					
-
 	else:
 		st.subheader("About Global HRIS")
 		st.info("Global HR Implementataion Sevices Ltd")
