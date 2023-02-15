@@ -29,7 +29,7 @@ def load_image(image_file):
 	img = Image.open(image_file)
 	return img 
 
-def find_difference()
+def find_difference():
 	month1 = st.selectbox("Select the first month", df.columns)
 	month2 = st.selectbox("Select the second month", df.columns)
 	Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
