@@ -20,13 +20,8 @@ file = st.file_uploader("Choose a file", type=["jpg", "jpeg", "png", "pdf", "csv
 
 # If a file is uploaded, process the file
 if file is not None:
-    # If file is an image, display the image
-    if file.type.startswith('image/'):
-        img = Image.open(file)
-        st.image(img, caption="Uploaded image", use_column_width=True)
-
     # If file is a PDF, display the first page of the PDF
-    elif file.type == 'application/pdf':
+    if file.type == 'application/pdf':
         pdf = pdftotext.PDF(file)
         first_page = pdf[0]
         st.write(first_page)
