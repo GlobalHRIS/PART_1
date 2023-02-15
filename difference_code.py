@@ -10,13 +10,11 @@ st.title("Global HR Implementation Services Limited \n Net Pay Difference Calcul
 
 file = st.file_uploader("Choose a file", type=["jpg", "jpeg", "png", "pdf", "csv"])
 
-
 # Set up the Streamlit interface
 st.title("Upload the input file to check the difference")
 st.write("Upload an  PDF, or CSV file below:")
 
 # uploading input file as payslip pdf
-
 st.write("Please upload a pdf file")
 
 uploaded_pdffile = st.file_uploader("Choose a pdf file", type=["pdf"])
