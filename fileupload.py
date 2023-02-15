@@ -32,7 +32,12 @@ def load_image(image_file):
 
 
 def main():
-	st.title("File Upload Tutorial")
+	
+	# Streamlit Dashboard          
+	st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
+	st.image("logo.png", width = 400)
+	st.title("Global HR Implementation Services Limited \n Net Pay Difference Calculator")
+
 
 	menu = ["Home","Dataset","DocumentFiles","About"]
 	choice = st.sidebar.selectbox("Menu",menu)
@@ -57,9 +62,23 @@ def main():
 			if data_file is not None:
 				file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
 				st.write(file_details)
-
 				df = pd.read_csv(data_file)
 				st.dataframe(df)
+				column1 = st.selectbox("Select the first month", df.columns)
+    				column2 = st.selectbox("Select the second month", df.columns)
+    				new_column_name = st.text_input("Enter the name of the new column", "Net Pay Difference")
+    				df[new_column_name] = df[column1] - df[column2]
+    				st.write("Net Pay Difference of all the Employees")
+    				st.write(df)
+    				emp_number = st.text_input("Enter the employee number:")
+    				for row in df:
+        				if emp_number:
+                 				empdata = df[df['Employee Number'] == int(emp_number)]
+                 				st.write("The net pay difference for employee number {} is:".format(emp_number))
+                 				st.write(empdata)   
+                 				break
+                    
+
 
 	elif choice == "DocumentFiles":
 		st.subheader("DocumentFiles")
@@ -94,12 +113,13 @@ def main():
 					st.write(raw_text)
 
 	else:
-		st.subheader("About")
-		st.info("Built with Streamlit")
-		st.info("Jesus Saves @JCharisTech")
-		st.text("Jesse E.Agbe(JCharis)")
-
-
+		st.subheader("About Global HRIS")
+		st.info("Global HR Implementataion Sevices Ltd")
+		st.text("Here at Global HRIS, we specialise in global payroll implementation services. From data migration services to payroll project management, we support clients on their digital transformation journey.")
+                st.info("+44 161 317 2903")
+		st.info("info@globalhris.co.uk")
+		st.info("International House, 61 Mosley Street, Manchester, M2 3HZ")
+                st.info("Built with Streamlit")
 
 if __name__ == '__main__':
 	main()
