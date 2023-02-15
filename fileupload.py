@@ -61,9 +61,9 @@ def main():
 				st.write(file_details)
 				df = pd.read_csv(data_file)
 				#st.dataframe(df)
-				column1 = st.selectbox("Select the first month", df.columns)
-    				column2 = st.selectbox("Select the second month", df.columns)
-    				new_column_name = st.text_input("Enter the name of the new column", "Net Pay Difference")
+				column1 = st.selectbox("Select the first month",df.columns)
+				column2 = st.selectbox("Select the second month",df.columns)
+				new_column_name = st.text_input("Enter the name of the new column", "Net Pay Difference")
     				df[new_column_name] = df[column1] - df[column2]
     				st.write("Net Pay Difference of all the Employees")
     				st.write(df)
