@@ -74,7 +74,7 @@ def main():
 				file_details = {"Filename":data_file.name,"FileType":data_file.type,"FileSize":data_file.size}
 				st.write(file_details)
 				df = pd.read_csv(data_file)
-				find_difference()
+				find_difference(df)
 				                   			
 						
    
