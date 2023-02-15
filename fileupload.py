@@ -108,6 +108,7 @@ def main():
 				# Use the right file processor ( Docx,Docx2Text,etc)
 					raw_text = docx2txt.process(docx_file) # Parse in the uploadFile Class 
 					st.write(raw_text)
+					
 
 	else:
 		st.subheader("About Global HRIS")
