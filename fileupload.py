@@ -35,7 +35,7 @@ def main():
 	# Streamlit Dashboard          
 	st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 	st.image("logo.png", width = 400)
-	st.title("Global HR Implementation Services Limited \n Net Pay Difference Calculator")
+	st.title("Global HR Implementation Services Limited")
 	menu = ["Home","Dataset","DocumentFiles","AI Net Pay Difference Finder","About Us"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
@@ -54,6 +54,7 @@ def main():
 
 	elif choice == "Dataset":
 		st.subheader("Dataset")
+		st.write("Upload your data in csv format")
 		data_file = st.file_uploader("Upload CSV",type=['csv'])
 		if st.button("Process"):
 			if data_file is not None:
@@ -65,6 +66,7 @@ def main():
 
 	elif choice == "DocumentFiles":
 		st.subheader("DocumentFiles")
+		st.write("Upload your payslip")
 		docx_file = st.file_uploader("Upload File",type=['txt','docx','pdf'])
 		if st.button("Process"):
 			if docx_file is not None:
