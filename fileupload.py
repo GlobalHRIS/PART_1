@@ -36,7 +36,7 @@ def main():
 	st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 	st.image("logo.png", width = 400)
 	st.title("Global HR Implementation Services Limited \n Net Pay Difference Calculator")
-	menu = ["Home","Dataset","DocumentFiles","AI Net Pay Difference Finder","About"]
+	menu = ["Home","Dataset","DocumentFiles","AI Net Pay Difference Finder","About Us"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "Home":
@@ -114,9 +114,9 @@ def main():
 					break
 							
 	else:
-		st.subheader("About Global HRIS")
+		st.subheader("About Us")
 		st.info("Global HR Implementataion Sevices Ltd")
-		st.text("Here at Global HRIS, we specialise in global payroll implementation services. \n From data migration services to payroll project management. \n we support clients on their digital transformation journey.")
+		st.text("Here at Global HRIS, we specialise in global payroll implementation services. \nFrom data migration services to payroll project management. \nWe support clients on their digital transformation journey.")
 		st.info("+44 161 317 2903")
 		st.info("info@globalhris.co.uk")
 		st.info("International House, 61 Mosley Street, Manchester, M2 3HZ")
