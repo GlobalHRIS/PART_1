@@ -81,9 +81,9 @@ def main():
 					empdata = df[df['Employee Number'] == int(emp_number)]
 					st.write("The net pay difference for employee number {} is:".format(emp_number))
 					st.write(empdata)
-					break                       
-                        
-  if __name__ == '__main__':
+					break                                     
+					
+if __name__ == '__main__':
 	main()                      
                         
     
