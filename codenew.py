@@ -39,7 +39,7 @@ def main():
 
 	if choice == "About Us": 
       		st.subheader("What we do")
-		st.info("Global HR Implementataion Sevices Ltd")
+		st.info("Global HR Implementataion Sevices Ltd")s
 		st.text("Here at Global HRIS, we specialise in global payroll implementation services. \nFrom data migration services to payroll project management. \nWe support clients on their digital transformation journey.")
 		st.info("+44 161 317 2903")
 		st.info("info@globalhris.co.uk")
