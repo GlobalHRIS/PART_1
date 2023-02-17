@@ -32,7 +32,7 @@ def main():
         table_name = st.text_input('Table name', 'emp_netpay')
 
         # If the user entered a name for the database and table
-        if globalhris and emp_netpay:
+        if db_name and table_name:
             # Load the data into the database
             load_data_to_database(data, globalhris, emp_netpay)
             st.write('Data loaded into database')
