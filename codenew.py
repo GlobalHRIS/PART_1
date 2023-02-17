@@ -42,8 +42,7 @@ def main():
 
 				                   				
 	if choice == "Upload Payslip":
-		st.subheader("DocumentFiles")
-		st.write("Upload your payslip")
+		st.subheader("Upload your payslip")
 		docx_file = st.file_uploader("Upload File",type=['txt','docx','pdf'])
 		if st.button("Process"):
 			if docx_file is not None:
