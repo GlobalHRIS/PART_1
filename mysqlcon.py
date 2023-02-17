@@ -2,37 +2,67 @@ import streamlit as st
 import pandas as pd
 import mysql.connector
 
-# Create a connection to your MySQL database
-cnx = mysql.connector.connect(user='root', password='',
-                              host='localhost', database='globalhris')
+# Function to create a MySQL connection
+def create_connection(host_name, user_name, user_password, db_name):
+    conn = None
+    try:
+        conn = mysql.connector.connect(
+            host=host_name,
+            user=user_name,
+            passwd=user_password,
+            database=db_name
+        )
+        print("Connection to MySQL DB successful")
+    except mysql.connector.Error as e:
+        print(f"The error '{e}' occurred")
 
-# Define a function to create a table in your database and insert the data from a pandas dataframe
-def create_table(df, table_name):
-    cursor = cnx.cursor()
-    columns = list(df.columns)
-    col_types = []
-    for column in columns:
-        if pd.api.types.is_integer_dtype(df[column]):
-            col_types.append(column + " INT")
-        elif pd.api.types.is_float_dtype(df[column]):
-            col_types.append(column + " FLOAT")
-        else:
-            col_types.append(column + " VARCHAR(255)")
-    query = "CREATE TABLE {} ({})".format(table_name, ", ".join(col_types))
-    cursor.execute(query)
-    for i,row in df.iterrows():
-        query = "INSERT INTO {} ({}) VALUES ({})".format(table_name, ", ".join(columns), ", ".join(["%s"]*len(columns)))
-        cursor.execute(query, tuple(row))
-    cnx.commit()
+    return conn
 
-# Create a file uploader in Streamlit and define the function to handle the uploaded file
-file = st.file_uploader("Upload a CSV file", type=["csv"])
+# Function to create a MySQL table
+def create_table(conn, create_table_sql):
+    try:
+        cursor = conn.cursor()
+        cursor.execute(create_table_sql)
+        print("Table created successfully")
+    except mysql.connector.Error as e:
+        print(f"The error '{e}' occurred")
+
+# Function to insert data into MySQL table
+def insert_data(conn, insert_data_sql, data):
+    try:
+        cursor = conn.cursor()
+        cursor.executemany(insert_data_sql, data)
+        conn.commit()
+        print("Data inserted successfully")
+    except mysql.connector.Error as e:
+        print(f"The error '{e}' occurred")
+
+# MySQL connection details
+host = 'localhost:3306'
+user = 'root'
+password = 'LeakTimeBike4242'
+database = 'globalhris'
+
+# Create a MySQL connection
+conn = create_connection(host, user, password, database)
+
+# Create a Streamlit file uploader
+st.set_option('deprecation.showfileUploaderEncoding', False)
+file = st.file_uploader("Upload CSV file", type=["csv"])
+
 if file is not None:
-    # Load the uploaded file into a pandas dataframe
+    # Read CSV file into a pandas DataFrame
     df = pd.read_csv(file)
-    # Get the table name from the user
-    table_name = st.text_input("Enter the table name")
-    # Create the table and insert the data into the database
-    if st.button("Create Table and Insert Data"):
-        create_table(df, table_name)
-        st.success("Data inserted successfully!")
+
+    # Create a MySQL table with the same column names as the CSV file
+    table_name = 'table_name'
+    columns = ', '.join(list(df.columns))
+    create_table_sql = f"CREATE TABLE {table_name} ({columns})"
+    create_table(conn, create_table_sql)
+
+    # Insert data into MySQL table
+    insert_data_sql = f"INSERT INTO {table_name} ({columns}) VALUES ({', '.join(['%s']*len(df.columns))})"
+    data = [tuple(row) for row in df.values.tolist()]
+    insert_data(conn, insert_data_sql, data)
+
+    st.success("Data successfully uploaded to MySQL database")
