@@ -28,8 +28,8 @@ def main():
         st.write('Original Data', data)
 
         # Get the name of the database and table
-        db_name = st.text_input('Database name', 'globalhris')
-        table_name = st.text_input('Table name', 'emp_netpay')
+        db_name = st.text_input('Database name', 'my_database')
+        table_name = st.text_input('Table name', 'my_table')
 
         # If the user entered a name for the database and table
         if db_name and table_name:
