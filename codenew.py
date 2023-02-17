@@ -38,37 +38,37 @@ def main():
 	choice = st.sidebar.selectbox("Menu",menu)
 
 	if choice == "About Us": 
-      		st.subheader("What we do")
-		st.info("Global HR Implementataion Sevices Ltd")
-		st.text("Here at Global HRIS, we specialise in global payroll implementation services. \nFrom data migration services to payroll project management. \nWe support clients on their digital transformation journey.")
-		st.info("+44 161 317 2903")
-		st.info("info@globalhris.co.uk")
-		st.info("International House, 61 Mosley Street, Manchester, M2 3HZ")
+      			st.subheader("What we do")
+			st.info("Global HR Implementataion Sevices Ltd")
+			st.text("Here at Global HRIS, we specialise in global payroll implementation services. \nFrom data migration services to payroll project management. \nWe support clients on their digital transformation journey.")
+			st.info("+44 161 317 2903")
+			st.info("info@globalhris.co.uk")
+			st.info("International House, 61 Mosley Street, Manchester, M2 3HZ")
       
 	 elif choice == "PDF Payslip uploader"
-          	st.subheader("Upload the payslip in Pdf format")
-          	file = st.file_uploader("Upload File",type=['pdf'])
-              	if st.button("Process"):
-                  	if pdf.type == "application/pdf":
-                     	try:
-                            with pdfplumber.open(file) as pdf:
-                            page = pdf.pages[0]
-                            st.write(page.extract_text())
-                            for row in text.split('\n')
-                                if row.startswith('Net pay')
-                                	netpay = rows.split()[-1]
-			except:
-				st.write("None")
+          		st.subheader("Upload the payslip in Pdf format")
+          		file = st.file_uploader("Upload File",type=['pdf'])
+              		if st.button("Process"):
+                  		if pdf.type == "application/pdf":
+                     		try:
+                            		with pdfplumber.open(file) as pdf:
+                            		page = pdf.pages[0]
+                            		st.write(page.extract_text())
+                            		for row in text.split('\n')
+                                		if row.startswith('Net pay')
+                                		netpay = rows.split()[-1]
+				except:
+					st.write("None")
                     
                   	 elif docx_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-				# Use the right file processor ( Docx,Docx2Text,etc)
-				raw_text = docx2txt.process(docx_file) # Parse in the uploadFile Class 
-				st.write(raw_text)
+					# Use the right file processor ( Docx,Docx2Text,etc)
+					raw_text = docx2txt.process(docx_file) # Parse in the uploadFile Class 
+					st.write(raw_text)
                         
  	 elif choice == "AI Net Pay Difference Finder":
-		   st.subheader("AI Net Pay Difference Finder")
-		   file = st.file_uploader("Upload File",type=["csv"])
-		    if file is not None:
+		   	st.subheader("AI Net Pay Difference Finder")
+		   	file = st.file_uploader("Upload File",type=["csv"])
+		    	if file is not None:
 			     df = pd.read_csv(file)
 			     month1 = st.selectbox("Select the first month", df.columns)
 			     month2 = st.selectbox("Select the second month", df.columns)
