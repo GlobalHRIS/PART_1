@@ -87,10 +87,10 @@ def main():
 					try:
 						with pdfplumber.open(docx_file) as pdf:
 						    page = pdf.pages[0]
-						    st.write(page.extract_text())
-						    for row in text.split('\n'):
-    							if row.startswith('Net Pay'):
-        						balance = row.split()[-1]
+						    st.write(page.extract_text())					
+						    for row in text.split('\n'):		 
+						    	if row.startswith('Net Pay'):
+							balance = row.split()[-1]
 					except:
 						st.write("None")
 					    
