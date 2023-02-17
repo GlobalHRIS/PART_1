@@ -36,7 +36,7 @@ def app():
 
         # Loop through each row in the DataFrame and insert into MySQL database
         for i, row in df.iterrows():
-            insert_query = "INSERT INTO your_table_name (column1, column2, column3) VALUES (%s, %s, %s)"
+            insert_query = "INSERT INTO emp1 (column1, column2, column3) VALUES (%s, %s, %s)"
             values = (row['column1'], row['column2'], row['column3'])
             cursor.execute(insert_query, values)
             conn.commit()
