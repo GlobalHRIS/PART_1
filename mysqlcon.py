@@ -2,34 +2,37 @@ import streamlit as st
 import pandas as pd
 import mysql.connector
 
-# Set up MySQL connection
-mydb = mysql.connector.connect(
-  host="127.0.0.1",
-  user="root",
-  password="",
-  database="globalhris"
-)
+# Create a connection to your MySQL database
+cnx = mysql.connector.connect(user='root', password='LeakTimeBike4242',
+                              host='localhost', database='globalhris')
 
-# Define function to insert data into MySQL table
-def insert_data(table_name, data):
-    cursor = mydb.cursor()
-    cols = "`,`".join([str(i) for i in data.columns.tolist()])
-    for i,row in data.iterrows():
-        sql = "INSERT INTO " + table_name + " (`" +cols + "`) VALUES (" + "%s,"*(len(row)-1) + "%s)"
-        cursor.execute(sql, tuple(row))
-        mydb.commit()
+# Define a function to create a table in your database and insert the data from a pandas dataframe
+def create_table(df, table_name):
+    cursor = cnx.cursor()
+    columns = list(df.columns)
+    col_types = []
+    for column in columns:
+        if pd.api.types.is_integer_dtype(df[column]):
+            col_types.append(column + " INT")
+        elif pd.api.types.is_float_dtype(df[column]):
+            col_types.append(column + " FLOAT")
+        else:
+            col_types.append(column + " VARCHAR(255)")
+    query = "CREATE TABLE {} ({})".format(table_name, ", ".join(col_types))
+    cursor.execute(query)
+    for i,row in df.iterrows():
+        query = "INSERT INTO {} ({}) VALUES ({})".format(table_name, ", ".join(columns), ", ".join(["%s"]*len(columns)))
+        cursor.execute(query, tuple(row))
+    cnx.commit()
 
-# Streamlit app
-st.title("Upload CSV to MySQL")
-
-# Get user input
-file = st.file_uploader("Choose a CSV file", type="csv")
-table_name = st.text_input("Enter table name")
-
-# Process file and insert data into MySQL
+# Create a file uploader in Streamlit and define the function to handle the uploaded file
+file = st.file_uploader("Upload a CSV file", type=["csv"])
 if file is not None:
-    data = pd.read_csv(file)
-    st.write(data)
-    if st.button("Insert into MySQL"):
-        insert_data(table_name, data)
-        st.success("Data inserted into MySQL!")
+    # Load the uploaded file into a pandas dataframe
+    df = pd.read_csv(file)
+    # Get the table name from the user
+    table_name = st.text_input("Enter the table name")
+    # Create the table and insert the data into the database
+    if st.button("Create Table and Insert Data"):
+        create_table(df, table_name)
+        st.success("Data inserted successfully!")
