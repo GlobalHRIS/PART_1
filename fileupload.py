@@ -93,8 +93,7 @@ def main():
 							balance = row.split()[-1]
 					except:
 						st.write("None")
-					    
-					
+					    	
 				elif docx_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
 				# Use the right file processor ( Docx,Docx2Text,etc)
 					raw_text = docx2txt.process(docx_file) # Parse in the uploadFile Class 
