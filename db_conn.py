@@ -8,7 +8,7 @@ def load_data_to_database(dataframe, db_name, table_name):
     engine = create_engine(f'sqlite:///globalhris.db', echo=False)
     
     # Write the data to the database
-    dataframe.to_sql(emp_netpay, con=engine, if_exists='replace', index=False)
+    dataframe.to_sql(table_name, con=engine, if_exists='replace', index=False)
 
 # Create a Streamlit app
 def main():
