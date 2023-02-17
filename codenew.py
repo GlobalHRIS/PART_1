@@ -24,20 +24,19 @@ def read_pdf2(file):
 	    return page.extract_text()
 
 
-@st.cache
 def load_image(image_file):
 	img = Image.open(image_file)
 	return img 
 	
 def main():
-	# Streamlit Dashboard          
-	st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
-	st.image("logo.png", width = 400)
-	st.title("Global HR Implementation Services Limited")
-	menu = ["About Us","PDF Payslip uploader","AI Net Pay Difference Finder"]
-	choice = st.sidebar.selectbox("Menu",menu)
+		# Streamlit Dashboard          
+		st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
+		st.image("logo.png", width = 400)
+		st.title("Global HR Implementation Services Limited")
+		menu = ["About Us","PDF Payslip uploader","AI Net Pay Difference Finder"]
+		choice = st.sidebar.selectbox("Menu",menu)
 
-	if choice == "About Us": 
+		if choice == "About Us": 
       			st.subheader("What we do")
 			st.info("Global HR Implementataion Sevices Ltd")
 			st.text("Here at Global HRIS, we specialise in global payroll implementation services. \nFrom data migration services to payroll project management. \nWe support clients on their digital transformation journey.")
