@@ -1,36 +1,45 @@
 import streamlit as st
 import pandas as pd
-import mysql.connector
+from sqlalchemy import create_engine
 
+# Create a function to load the data into a database
+def load_data_to_database(dataframe, db_name, table_name):
+    # Create a connection to the database
+    engine = create_engine(f'sqlite:///{db_name}.db', echo=False)
+    
+    # Write the data to the database
+    dataframe.to_sql(table_name, con=engine, if_exists='replace', index=False)
 
-# Set up MySQL connection
-mydb = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  password="LeakTimeBike4242",
-  database="globalhris"
-)
+# Create a Streamlit app
+def main():
+    # Set the title and the header
+    st.title('Data Upload and Database Load')
+    st.header('Upload your data and load it into a database')
 
-# Define function to insert data into MySQL table
-def insert_data(table_name, data):
-    cursor = mydb.cursor()
-    cols = "`,`".join([str(i) for i in data.columns.tolist()])
-    for i,row in data.iterrows():
-        sql = "INSERT INTO " + table_name + " (`" +cols + "`) VALUES (" + "%s,"*(len(row)-1) + "%s)"
-        cursor.execute(sql, tuple(row))
-        mydb.commit()
+    # Create a file uploader
+    uploaded_file = st.file_uploader('Choose a CSV file', type=['csv'])
 
-# Streamlit app
-st.title("Upload CSV to MySQL")
+    # If a file was uploaded
+    if uploaded_file is not None:
+        # Read the file into a DataFrame
+        data = pd.read_csv(uploaded_file)
 
-# Get user input
-file = st.file_uploader("Choose a CSV file", type="csv")
-table_name = st.text_input("Enter table name")
+        # Show the DataFrame in the app
+        st.write('Original Data', data)
 
-# Process file and insert data into MySQL
-if file is not None:
-    data = pd.read_csv(file)
-    st.write(data)
-    if st.button("Insert into MySQL"):
-        insert_data(table_name, data)
-        st.success("Data inserted into MySQL!")
+        # Get the name of the database and table
+        db_name = st.text_input('Database name', 'my_database')
+        table_name = st.text_input('Table name', 'my_table')
+
+        # If the user entered a name for the database and table
+        if db_name and table_name:
+            # Load the data into the database
+            load_data_to_database(data, db_name, table_name)
+            st.write('Data loaded into database')
+        else:
+            st.write('Please enter a database name and table name')
+    else:
+        st.write('Please upload a CSV file')
+
+if __name__ == '__main__':
+    main()
