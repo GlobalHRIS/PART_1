@@ -3,7 +3,7 @@ import pandas as pd
 import mysql.connector
 
 # Create a connection to your MySQL database
-cnx = mysql.connector.connect(user='root', password='LeakTimeBike4242',
+cnx = mysql.connector.connect(user='root', password='',
                               host='localhost', database='globalhris')
 
 # Define a function to create a table in your database and insert the data from a pandas dataframe
