@@ -98,6 +98,7 @@ def main():
 				# Use the right file processor ( Docx,Docx2Text,etc)
 					raw_text = docx2txt.process(docx_file) # Parse in the uploadFile Class 
 					st.write(raw_text)
+					
 	elif choice == "AI Net Pay Difference Finder":
 		st.subheader("AI Net Pay Difference Finder")
 		file = st.file_uploader("Upload File",type=["csv"])
