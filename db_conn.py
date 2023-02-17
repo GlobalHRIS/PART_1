@@ -34,7 +34,7 @@ def main():
         # If the user entered a name for the database and table
         if db_name and table_name:
             # Load the data into the database
-            load_data_to_database(data, db_name, table_name)
+            load_data_to_database(data, globalhris, emp_netpay)
             st.write('Data loaded into database')
         else:
             st.write('Please enter a database name and table name')
