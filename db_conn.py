@@ -1,38 +1,45 @@
 import streamlit as st
 import pandas as pd
-import mysql.connector
+from sqlalchemy import create_engine
 
-# Connect to the MySQL database
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="LeakTimeBike4242",
-    database="globalhris"
-)
+# Create a function to load the data into a database
+def load_data_to_database(dataframe, db_name, table_name):
+    # Create a connection to the database
+    engine = create_engine(f'sqlite:///{globalhris}.db', echo=False)
+    
+    # Write the data to the database
+    dataframe.to_sql(emp_netpay, con=engine, if_exists='replace', index=False)
 
-# Create a cursor object to execute SQL queries
-cursor = db.cursor()
+# Create a Streamlit app
+def main():
+    # Set the title and the header
+    st.title('Data Upload and Database Load')
+    st.header('Upload your data and load it into a database')
 
-# Streamlit interface to upload the CSV file
-st.title("Upload a CSV file to MySQL")
-file = st.file_uploader("Choose a CSV file", type="csv")
+    # Create a file uploader
+    uploaded_file = st.file_uploader('Choose a CSV file', type=['csv'])
 
-if file is not None:
-    # Read the contents of the CSV file into a Pandas DataFrame
-    df = pd.read_csv(file)
+    # If a file was uploaded
+    if uploaded_file is not None:
+        # Read the file into a DataFrame
+        data = pd.read_csv(uploaded_file)
 
-    # Create a MySQL table with the same column names as the DataFrame
-    columns = ", ".join(df.columns)
-    cursor.execute(f"CREATE TABLE IF NOT EXISTS netpay_data1 ({columns})")
+        # Show the DataFrame in the app
+        st.write('Original Data', data)
 
-    # Insert the rows of the DataFrame into the MySQL table
-    for i, row in df.iterrows():
-        values = tuple(row)
-        placeholders = ", ".join(["%s"] * len(row))
-        query = f"INSERT INTO netpay_data1 ({columns}) VALUES ({placeholders})"
-        cursor.execute(query, values)
+        # Get the name of the database and table
+        db_name = st.text_input('Database name', 'globalhris')
+        table_name = st.text_input('Table name', 'emp_netpay')
 
-    # Commit the changes to the MySQL database
-    db.commit()
+        # If the user entered a name for the database and table
+        if db_name and table_name:
+            # Load the data into the database
+            load_data_to_database(data, db_name, table_name)
+            st.write('Data loaded into database')
+        else:
+            st.write('Please enter a database name and table name')
+    else:
+        st.write('Please upload a CSV file')
 
-    st.write("CSV file uploaded and loaded into MySQL database!")
+if __name__ == '__main__':
+    main()
