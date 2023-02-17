@@ -15,7 +15,7 @@ cursor = db.cursor()
 
 # Streamlit interface to upload the CSV file
 st.title("Upload a CSV file to MySQL")
-file = st.file_uploader("Choose a CSV file", type="csv")
+file = st.file_uploader("Choose a CSV file", type="csv", accept_multiple_files=False)
 
 if file is not None:
     # Read the contents of the CSV file into a Pandas DataFrame
