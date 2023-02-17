@@ -23,13 +23,13 @@ if file is not None:
 
     # Create a MySQL table with the same column names as the DataFrame
     columns = ", ".join(df.columns)
-    cursor.execute(f"CREATE TABLE IF NOT EXISTS netpay_data ({columns})")
+    cursor.execute(f"CREATE TABLE IF NOT EXISTS netpay_data1 ({columns})")
 
     # Insert the rows of the DataFrame into the MySQL table
     for i, row in df.iterrows():
         values = tuple(row)
         placeholders = ", ".join(["%s"] * len(row))
-        query = f"INSERT INTO netpay_data ({columns}) VALUES ({placeholders})"
+        query = f"INSERT INTO netpay_data1 ({columns}) VALUES ({placeholders})"
         cursor.execute(query, values)
 
     # Commit the changes to the MySQL database
