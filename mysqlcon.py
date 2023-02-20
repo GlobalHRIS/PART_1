@@ -20,11 +20,11 @@ def load_data(file_path):
     data1 = pd.read_csv(file_path)
     # Create the table in the database
     table_name = "NetPayData"
-    create_table_query = f"CREATE TABLE IF NOT EXISTS {table_name} ({', '.join([f'{col} VARCHAR(255)' for col in data.columns])})"
+    create_table_query = f"CREATE TABLE IF NOT EXISTS {table_name} ({', '.join([f'{col} VARCHAR(255)' for col in data1.columns])})"
     cursor.execute(create_table_query)
     # Insert the data into the table
-    for row in data.itertuples():
-        insert_query = f"INSERT INTO {table_name} ({', '.join(data.columns)}) VALUES ({', '.join(['%s' for i in range(len(data.columns))])})"
+    for row in data1.itertuples():
+        insert_query = f"INSERT INTO {table_name} ({', '.join(data1.columns)}) VALUES ({', '.join(['%s' for i in range(len(data1.columns))])})"
         cursor.execute(insert_query, row[1:])
     conn.commit()
     conn.close()
