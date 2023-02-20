@@ -5,7 +5,7 @@ import mysql.connector
 # Create a function to connect to the MySQL database
 def create_connection():
     conn = mysql.connector.connect(
-        host="localhost",
+        host="ASC-ACA8087",
         user="root",
         password="",
         database="globalhris"
