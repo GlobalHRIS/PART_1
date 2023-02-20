@@ -43,8 +43,8 @@ def main():
 		st.write(data)
 		# Create a button to load the data into the MySQL database
 		if st.button("Load Data"):
-		load_data(data)
-		st.write("Data loaded successfully!")
+			load_data(data)
+			st.write("Data loaded successfully!")
 		
 if __name__ == "__main__":
     main()
