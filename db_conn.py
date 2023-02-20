@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 # Create a function to load the data into a database
 def load_data_to_database(dataframe, db_name, table_name):
      # Create a connection to the database
-     engine = create_engine(f'sqlite:///path/to/globalhris.db', echo=True)
+     engine = create_engine(f'sqlite:///globalhris.db', echo=True)
      # Write the data to the database
      dataframe.to_sql(table_name, con=engine, if_exists='replace', index=False)
 
