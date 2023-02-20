@@ -2,6 +2,10 @@ import streamlit as st
 import pandas as pd
 from sqlalchemy import create_engine
 
+ url = 'mysql://localhost:LeakTimeBike4242@127.0.0.1/globalhris'
+ engine = create_engine(url, echo=True)
+ connection = engine.connect()
+     
 # Create a function to load the data into a database
 def load_data_to_database(dataframe, db_name, table_name):
     # Create a connection to the database
@@ -44,9 +48,6 @@ def main():
             st.write('Please enter a database name and table name')
     else:
         st.write('Please upload a CSV file')
-     url = 'mysql://username:password@14.41.50.12/dbname'
-     engine = create_engine(url, echo=True)
-     connection = engine.connect()
-     
+    
 if __name__ == '__main__':
     main()
