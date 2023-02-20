@@ -9,7 +9,7 @@ st.title("Upload CSV to MySQL")
 uploaded_file = st.file_uploader("Choose a CSV file", type=".csv")
 
 # MySQL database connection details
-host = 'localhost'
+host = '127.0.0.1'
 user = 'root'
 password = 'LeakTimeBike4242'
 database = 'globalhris'
