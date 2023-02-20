@@ -46,5 +46,6 @@ def main():
 		load_data(data)
 		st.write("Data loaded successfully!")
 		
-if __name__ == "__main__":
-    main()
+if __name__=="__main__":
+	main()
+
