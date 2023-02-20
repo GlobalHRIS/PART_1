@@ -5,12 +5,8 @@ from sqlalchemy import create_engine
      
 # Create a function to load the data into a database
 def load_data_to_database(dataframe, db_name, table_name):
-    # Create a connection to the database
-     url = 'mysql://localhost:LeakTimeBike4242@127.0.0.1/globalhris'
-     engine = create_engine(url, echo=True)
-     connection = engine.connect()
-     #engine = create_engine(f'sqlite:///globalhris.db', echo=False)
-   
+     # Create a connection to the database
+     engine = create_engine(f'sqlite:///globalhris.db', echo=False)
      # Write the data to the database
      dataframe.to_sql(table_name, con=engine, if_exists='replace', index=False)
 
