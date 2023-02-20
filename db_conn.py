@@ -6,7 +6,7 @@ from sqlalchemy import create_engine
 def load_data_to_database(dataframe, db_name, table_name):
     # Create a connection to the database
     engine = create_engine(f'sqlite:///globalhris.db', echo=False)
-    
+   
     # Write the data to the database
     dataframe.to_sql(table_name, con=engine, if_exists='replace', index=False)
 
@@ -44,6 +44,9 @@ def main():
             st.write('Please enter a database name and table name')
     else:
         st.write('Please upload a CSV file')
-
+     url = 'mysql://username:password@14.41.50.12/dbname'
+     engine = create_engine(url, echo=True)
+     connection = engine.connect()
+     
 if __name__ == '__main__':
     main()
