@@ -14,9 +14,9 @@ def load_data_to_database(dataframe, db_name, table_name):
 def main():
     # Set the title and the header
     # Streamlit Dashboard          
-	st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
-	st.image("logo.png", width = 400)
-	st.title("Global HR Implementation Services Limited")
+    st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
+    st.image("logo.png", width = 400)
+    st.title("Global HR Implementation Services Limited")
     st.title('Data Upload and Database Load')
     st.header('Upload your data and load it into a database')
 
