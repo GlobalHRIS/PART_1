@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 from sqlalchemy import create_engine
 
- url = 'mysql://localhost:LeakTimeBike4242@127.0.0.1/globalhris'
- engine = create_engine(url, echo=True)
- connection = engine.connect()
+url = 'mysql://localhost:LeakTimeBike4242@127.0.0.1/globalhris'
+engine = create_engine(url, echo=True)
+connection = engine.connect()
      
 # Create a function to load the data into a database
 def load_data_to_database(dataframe, db_name, table_name):
