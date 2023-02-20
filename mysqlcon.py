@@ -17,7 +17,7 @@ def load_data(file_path):
     conn = create_connection()
     cursor = conn.cursor()
     # Load the data from the CSV file into a Pandas dataframe
-    data = pd.read_csv(file_path)
+    data1 = pd.read_csv(file_path)
     # Create the table in the database
     table_name = "NetPayData"
     create_table_query = f"CREATE TABLE IF NOT EXISTS {table_name} ({', '.join([f'{col} VARCHAR(255)' for col in data.columns])})"
