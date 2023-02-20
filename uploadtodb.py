@@ -40,11 +40,11 @@ def insert_data(conn, insert_data_sql, data):
 # MySQL connection details
 host = 'localhost'
 user = 'root'
-password = 'password'
-database = 'database_name'
+password = 'LeakTimebike4242'
+database = 'globalhris'
 
 # Create a MySQL connection
-conn = create_connection(localhost, root, LeakTimeBike4242, globalhris)
+conn = create_connection(host, user, password, database)
 
 # Create a Streamlit file uploader
 st.set_option('deprecation.showfileUploaderEncoding', False)
