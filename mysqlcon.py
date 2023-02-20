@@ -35,7 +35,6 @@ def main():
 	st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 	st.image("logo.png", width = 400)
 	st.title("Global HR Implementation Services Limited")
-    	st.title("CSV to MySQL Loader")
     # Create a file uploader to allow the user to select a CSV file
     file = st.file_uploader("Upload CSV file", type="csv")
     if file is not None:
