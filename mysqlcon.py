@@ -45,6 +45,6 @@ def main():
 		if st.button("Load Data"):
 		load_data(data)
 		st.write("Data loaded successfully!")
-
+		
 if __name__ == "__main__":
     main()
