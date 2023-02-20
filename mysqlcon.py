@@ -31,12 +31,12 @@ def load_data(file_path):
 
 # Create a Streamlit app
 def main():
-    # Streamlit Dashboard          
+    	# Streamlit Dashboard          
 	st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 	st.image("logo.png", width = 400)
 	st.title("Global HR Implementation Services Limited")
     	# Create a file uploader to allow the user to select a CSV file
-    	file = st.file_uploader("Upload CSV file", type="csv")
+	file = st.file_uploader("Upload CSV file", type="csv")
     	if file is not None:
         	# Display the file contents in a dataframe
         	data = pd.read_csv(file)
