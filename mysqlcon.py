@@ -38,13 +38,13 @@ def main():
     	# Create a file uploader to allow the user to select a CSV file
     	file = st.file_uploader("Upload CSV file", type="csv")
     	if file is not None:
-        # Display the file contents in a dataframe
-        data = pd.read_csv(file)
-        st.write(data)
-        # Create a button to load the data into the MySQL database
-        if st.button("Load Data"):
-            load_data(data)
-            st.write("Data loaded successfully!")
+        	# Display the file contents in a dataframe
+        	data = pd.read_csv(file)
+        	st.write(data)
+        	# Create a button to load the data into the MySQL database
+        	if st.button("Load Data"):
+            		load_data(data)
+            		st.write("Data loaded successfully!")
 
 if __name__ == "__main__":
     main()
