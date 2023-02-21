@@ -63,7 +63,8 @@ def main():
 					try:
 						with pdfplumber.open(docx_file) as pdf:
 							page = pdf.pages[0]
-							st.write(page.extract_text())
+							text = page.extract_text()
+							st.write(text)
 							for row in text.split('\n'):
 								if row.startswith('Net Pay'):
 									NettPay = row.split()[-1]e
