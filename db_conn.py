@@ -24,15 +24,18 @@ def main():
     uploaded_file = st.file_uploader('Choose a CSV file', type=['csv'])
     # If a file was uploaded
     if uploaded_file is not None:
-	# Read the file into a DataFrame
+    	# Read the file into a DataFrame
 	df = pd.read_csv(uploaded_file)
+	
 	# Show the DataFrame in the app
 	st.write('Original Data', df)
+	
 	month1 = st.selectbox("Select the first month", df.columns)
 	month2 = st.selectbox("Select the second month", df.columns)
 	Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
 	df[Net_Pay_Diff] = df[month1] - df[month2]
-	emp_number = st.text_input('Enter the Employee Number:')		
+	emp_number = st.text_input('Enter the Employee Number:')
+	
 	for row in df:
 		if emp_number:
 			empdata = df[df['Employee Number'] == int(emp_number)]
