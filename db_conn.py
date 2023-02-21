@@ -30,8 +30,8 @@ def main():
         	# Show the DataFrame in the app
         	st.write('Original Data', df)
         	month1 = st.selectbox("Select the first month", df.columns)
-        	month2 = st.selectbox("Select the second month", df.columns) 
-        	Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
+		month2 = st.selectbox("Select the second month", df.columns)
+		Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
 		df[Net_Pay_Diff] = df[month1] - df[month2]
 		emp_number = st.text_input('Enter the Employee Number:')		
 		for row in df:
