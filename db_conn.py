@@ -24,34 +24,29 @@ def main():
     uploaded_file = st.file_uploader('Choose a CSV file', type=['csv'])
     # If a file was uploaded
     if uploaded_file is not None:
-    	# Read the file into a DataFram
-	df = pd.read_csv(uploaded_file)
-	
-	# Show the DataFrame in the app
-	st.write('Original Data', df)
-	
-	month1 = st.selectbox("Select the first month", df.columns)
-	month2 = st.selectbox("Select the second month", df.columns)
-	Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
-	df[Net_Pay_Diff] = df[month1] - df[month2]
-	emp_number = st.text_input('Enter the Employee Number:')
-	
-	for row in df:
-		if emp_number:
-			empdata = df[df['Employee Number'] == int(emp_number)]
-			st.write("The net pay difference for employee number {} is:".format(emp_number))
-			st.write(empdata)
-			
+      df = pd.read_csv(uploaded_file)
+      # Show the DataFrame in the app
+      st.write('Original Data', df)
+      month1 = st.selectbox("Select the first month", df.columns)
+      month2 = st.selectbox("Select the second month", df.columns)
+      Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
+      df[Net_Pay_Diff] = df[month1] - df[month2]
+      emp_number = st.text_input('Enter the Employee Number:')
+      for row in df:
+        if emp_number:
+          empdata = df[df['Employee Number'] == int(emp_number)]
+          st.write("The net pay difference for employee number {} is:".format(emp_number))
+          st.write(empdata)
         # Get the name of the database and table
         db_name = st.text_input('Database name', 'my_database')
         table_name = st.text_input('Table name', 'my_table')
         # If the user entered a name for the database and table
         if db_name and table_name:
-            	# Load the data into the database
-            	load_data_to_database(df, db_name, table_name)
-            	st.write('Data loaded into database')
+          # Load the data into the database
+          load_data_to_database(df, db_name, table_name)
+          st.write('Data loaded into database')
         else:
-            	st.write('Please enter a database name and table name')
+          st.write('Please enter a database name and table name')
     else:
         st.write('Please upload a CSV file')
     
