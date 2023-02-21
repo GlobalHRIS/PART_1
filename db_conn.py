@@ -28,7 +28,7 @@ def main():
         	# Read the file into a DataFrame
         	df = pd.read_csv(uploaded_file)
         	# Show the DataFrame in the app
-        	st.write('Original Data', df)
+		st.write('Original Data', df)
 		month1 = st.selectbox("Select the first month", df.columns)
 		month2 = st.selectbox("Select the second month", df.columns)
 		Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
