@@ -67,7 +67,7 @@ def main():
 							st.write(text)
 							for row in text.split('\n'):
 								if row.startswith('Net Pay'):
-									NettPay = row.split()[-1]e
+									NetPay = row.split()[-1]
 					except:
 						st.write("None")
 					    	
