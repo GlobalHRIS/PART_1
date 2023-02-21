@@ -62,11 +62,11 @@ def main():
 					# st.write(raw_text)
 					try:
 						with pdfplumber.open(docx_file) as pdf:
-						    page = pdf.pages[0]
-						    st.write(page.extract_text())
+							page = pdf.pages[0]
+							st.write(page.extract_text())
 							for row in text.split('\n'):
 								if row.startswith('Net Pay'):
-									NettPay = row.split()[-1]	
+									NettPay = row.split()[-1]e
 					except:
 						st.write("None")
 					    	
