@@ -26,8 +26,8 @@ def main():
     # If a file was uploaded
     if uploaded_file is not None:
         	# Read the file into a DataFrame
-        	df = pd.read_csv(uploaded_file)
-        	# Show the DataFrame in the app
+		df = pd.read_csv(uploaded_file)
+		# Show the DataFrame in the app
 		st.write('Original Data', df)
 		month1 = st.selectbox("Select the first month", df.columns)
 		month2 = st.selectbox("Select the second month", df.columns)
