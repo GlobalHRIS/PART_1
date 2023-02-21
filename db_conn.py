@@ -37,6 +37,7 @@ def main():
           empdata = df[df['Employee Number'] == int(emp_number)]
           st.write("The net pay difference for employee number {} is:".format(emp_number))
           st.write(empdata)
+          break
         # Get the name of the database and table
         db_name = st.text_input('Database name', 'my_database')
         table_name = st.text_input('Table name', 'my_table')
