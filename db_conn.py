@@ -24,7 +24,7 @@ def main():
     uploaded_file = st.file_uploader('Choose a CSV file', type=['csv'])
     # If a file was uploaded
     if uploaded_file is not None:
-    	# Read the file into a DataFrame
+    	# Read the file into a DataFram
 	df = pd.read_csv(uploaded_file)
 	
 	# Show the DataFrame in the app
