@@ -17,7 +17,7 @@ def main():
     st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
     st.image("logo.png", width = 400)
     st.title("Global HR Implementation Services Limited")
-    st.title('AI Net Pay Diffrence Calculator')
+    st.title('AI Net Pay Diffrence Finder')
     st.header('Upload your data and load it into a database')
 
     # Create a file uploader
