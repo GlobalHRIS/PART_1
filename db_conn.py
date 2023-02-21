@@ -33,15 +33,15 @@ def main():
         month2 = st.selectbox("Select the second month", df.columns) 
         Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
         df[Net_Pay_Diff] = df[month1] - df[month2]
-			#st.write("Net Pay Difference of all the Employees")
-			#st.write(df)
-			emp_number = st.text_input("Enter the employee number:")
-			for row in df:
-				if emp_number:
-					empdata = df[df['Employee Number'] == int(emp_number)]
-					st.write("The net pay difference for employee number {} is:".format(emp_number))
-					st.write(empdata)
-					break
+	#st.write("Net Pay Difference of all the Employees")
+	#st.write(df)
+	emp_number = st.text_input("Enter the employee number:")
+	for row in df:
+		if emp_number:
+			empdata = df[df['Employee Number'] == int(emp_number)]
+			st.write("The net pay difference for employee number {} is:".format(emp_number))
+			st.write(empdata)
+			
         
         # Get the name of the database and table
         db_name = st.text_input('Database name', 'my_database')
