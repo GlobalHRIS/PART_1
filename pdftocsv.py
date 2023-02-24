@@ -6,7 +6,7 @@ import pandas as pd
 st.set_page_config(page_title="PDF to CSV Converter")
 
 # Set page header
-st.header("PDF to CSV Converter")
+st.header("Payslip PDF to CSV Converter")
 
 # Upload PDF file
 pdf_file = st.file_uploader("Upload a PDF file", type=["pdf"])
