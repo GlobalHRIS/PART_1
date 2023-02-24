@@ -11,6 +11,7 @@ st.header("PDF to CSV Converter")
 # Upload PDF file
 pdf_file = st.file_uploader("Upload a PDF file", type=["pdf"])
 
+
 # Check if file is uploaded
 if pdf_file is not None:
     # Read PDF file and extract tables using tabula-py
