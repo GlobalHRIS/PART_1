@@ -65,10 +65,10 @@ def main():
 							page = pdf.pages[0]
 							text = page.extract_text()
 							st.write(text)
-                            csv_file = st.text_input("Enter CSV filename:")
-                            if csv_file:
-                                df.to_csv(csv_file, index=False)
-                                st.success(f"CSV file saved as {csv_file}.")
+							csv_file = st.text_input("Enter CSV filename:")
+							if csv_file:
+								df.to_csv(csv_file, index=False)
+								st.success(f"CSV file saved as {csv_file}.")
 							
 					except:
 						st.write("None")
