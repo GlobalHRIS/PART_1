@@ -67,7 +67,8 @@ def main():
 							st.write(text)
 							csv_file = st.text_input("Enter CSV filename:")
 							new_file = text.to_csv(csv_file, index=False)
-							st.write(new_file)
+							myfile = pd.read_csv(new_file)
+							st.write(myfile)
 								#st.success(f"CSV file saved as {csv_file}.")
 							
 					except:
