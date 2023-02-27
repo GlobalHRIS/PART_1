@@ -67,8 +67,8 @@ def main():
 							st.write(text)
 							csv_file = st.text_input("Enter CSV filename:")
 							if csv_file:
-								text.to_csv(csv_file, index=False)
-								st.success(f"CSV file saved as {csv_file}.")
+								text.to_csv(r'O:\Attachments\Code_Data\csv files, index=None)
+								#st.success(f"CSV file saved as {csv_file}.")
 							
 					except:
 						st.write("None")
