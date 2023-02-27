@@ -64,6 +64,7 @@ def main():
 						with pdfplumber.open(docx_file) as pdf:
 							page = pdf.pages[0]
 							text = page.extract_text()
+							split = text.split(',')
 							st.write(text)
 							#csv_file = st.text_input("Enter CSV filename:")
 							new_file = text.to_csv(text, index=False)
