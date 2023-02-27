@@ -67,7 +67,7 @@ def main():
 							st.write(text)
 							csv_file = st.text_input("Enter CSV filename:")
 							if csv_file:
-								df.to_csv(csv_file, index=False)
+								text.to_csv(csv_file, index=False)
 								st.success(f"CSV file saved as {csv_file}.")
 							
 					except:
