@@ -67,7 +67,8 @@ def main():
 							st.write(text)
 							csv_file = st.text_input("Enter CSV filename:")
 							text.to_csv(csv_file, index=False)
-							st.write(csv_file)
+							if csv_file:
+								st.write(csv_file)
 								#st.success(f"CSV file saved as {csv_file}.")
 							
 					except:
