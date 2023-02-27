@@ -66,9 +66,8 @@ def main():
 							text = page.extract_text()
 							st.write(text)
 							csv_file = st.text_input("Enter CSV filename:")
-							text.to_csv(csv_file, index=False)
-							if csv_file:
-								st.write(csv_file)
+							new_file = text.to_csv(csv_file, index=False)
+							st.write(new_file)
 								#st.success(f"CSV file saved as {csv_file}.")
 							
 					except:
