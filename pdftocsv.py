@@ -66,7 +66,7 @@ def main():
 							text = page.extract_text()
 							st.write(text)
 							csv_file = st.text_input("Enter CSV filename:")
-							text.to_csv(w'O:\Attachments\Code_Data\csv files\payslip_1.csv', index=None)
+							text.to_csv(csv_file, index=None)
 							st.write(csv_file)
 								#st.success(f"CSV file saved as {csv_file}.")
 							
