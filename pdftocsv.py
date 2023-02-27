@@ -65,8 +65,8 @@ def main():
 							page = pdf.pages[0]
 							text = page.extract_text()
 							st.write(text)
-							csv_file = st.text_input("Enter CSV filename:")
-							new_file = text.to_csv(csv_file, index=False)
+							#csv_file = st.text_input("Enter CSV filename:")
+							new_file = text.to_csv(text, index=False)
 							myfile = pd.read_csv(new_file)
 							st.write(myfile)
 								#st.success(f"CSV file saved as {csv_file}.")
