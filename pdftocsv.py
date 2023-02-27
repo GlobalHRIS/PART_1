@@ -67,7 +67,7 @@ def main():
 							split = text.split(',')
 							st.write(split)
 							#csv_file = st.text_input("Enter CSV filename:")
-							new_file = text.to_csv(text, index=False)
+							new_file = text.to_csv(split, index=False)
 							myfile = pd.read_csv(new_file)
 							st.write(myfile)
 								#st.success(f"CSV file saved as {csv_file}.")
