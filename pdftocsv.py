@@ -1,27 +1,28 @@
 import streamlit as st
-import tabula
+import PyPDF2
 import pandas as pd
 
-# Set page title
-st.set_page_config(page_title="PDF to CSV Converter")
+# Define Streamlit app title
+st.title("PDF to CSV Converter")
 
-# Set page header
-st.header("Payslip PDF to CSV Converter")
+# Create file uploader widget
+uploaded_file = st.file_uploader("Upload a PDF file", type=["pdf"])
 
-# Upload PDF file
-pdf_file = st.file_uploader("Upload a PDF file", type=["pdf"])
+# Define function to extract text from PDF
+def extract_text_from_pdf(file):
+    pdf_reader = PyPDF2.PdfFileReader(file)
+    text = ""
+    for page in range(pdf_reader.getNumPages()):
+        text += pdf_reader.getPage(page).extractText()
+    return text
 
-
-# Check if file is uploaded
-if pdf_file is not None:
-    # Read PDF file and extract tables using tabula-py
-    df = tabula.read_pdf(pdf_file)
-
-    # Concatenate all tables into a single dataframe
-    df_concat = pd.concat(df)
-
-    # Save the dataframe as a CSV file
-    csv_file = df_concat.to_csv(index=False)
-
-    # Display the CSV file as a download link
-    st.download_button("Download CSV", data=csv_file, file_name="output.csv")
+# If file is uploaded, extract text and save as CSV
+if uploaded_file is not None:
+    text = extract_text_from_pdf(uploaded_file)
+    df = pd.DataFrame({"Text": [text]})
+    st.write("Extracted Text:")
+    st.write(df)
+    csv_file = st.text_input("Enter CSV filename:")
+    if csv_file:
+        df.to_csv(csv_file, index=False)
+        st.success(f"CSV file saved as {csv_file}.")
