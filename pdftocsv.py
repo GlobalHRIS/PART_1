@@ -65,8 +65,6 @@ def main():
 							page = pdf.pages[0]
 							text = page.extract_text()
 							split = text.split(' ')
-							st.write(split)
-							#csv_file = st.text_input("Enter CSV filename:")
 							new_file = split.to_csv(split, index=False)
 							myfile = pd.read_csv(new_file)
 							# Prompt the user to enter a filename to save the CSV file as
@@ -75,6 +73,16 @@ def main():
 								# Save the CSV file to the user's computer
 								csv_file = pdf_data.to_csv(f"{csv_filename}.csv", index=False)
 								st.success("CSV file saved!")
+							st.write(split)
+							#csv_file = st.text_input("Enter CSV filename:")
+							#new_file = split.to_csv(split, index=False)
+							#myfile = pd.read_csv(new_file)
+							#Prompt the user to enter a filename to save the CSV file as
+							#csv_filename = st.text_input("Enter a filename for the CSV file")
+							#if csv_filename:
+								#Save the CSV file to the user's computer
+								#csv_file = pdf_data.to_csv(f"{csv_filename}.csv", index=False)
+								#st.success("CSV file saved!")
 							
 					except:
 						st.write("None")
