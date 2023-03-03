@@ -70,11 +70,12 @@ def main():
 							if csv_filename:
 								# Save the CSV file to the user's computer
 								csv_file = payslip.to_csv(f"{csv_filename}.csv", index=False)
-								myfile = pd.read_csv(csv_file)
-								st.write(my_file)
-								break		
+								st.success("CSV file saved!")
+								#myfile = pd.read_csv(csv_file)
+								#st.write(my_file)
+								#break		
 											
-							#st.success("CSV file saved!")
+					
 							#csv_file = st.text_input("Enter CSV filename:")
 							#new_file = split.to_csv(split, index=False)
 							#myfile = pd.read_csv(new_file)
