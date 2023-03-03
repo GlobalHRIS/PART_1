@@ -73,7 +73,7 @@ def main():
 								# Save the CSV file to the user's computer
 								csv_file = pdf_data.to_csv(f"{csv_filename}.csv", index=False)
 								st.success("CSV file saved!")
-							st.write(split)
+								st.write(split)
 							#csv_file = st.text_input("Enter CSV filename:")
 							#new_file = split.to_csv(split, index=False)
 							#myfile = pd.read_csv(new_file)
