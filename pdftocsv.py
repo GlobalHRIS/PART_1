@@ -65,8 +65,8 @@ def main():
 							page = pdf.pages[0]
 							text = page.extract_text()
 							split = text.split(' ')
-							new_file = split.to_csv(split, index=False)
-							myfile = pd.read_csv(new_file)
+							#new_file = split.to_csv(split, index=False)
+							#myfile = pd.read_csv(new_file)
 							# Prompt the user to enter a filename to save the CSV file as
 							csv_filename = st.text_input("Enter a filename for the CSV file")
 							if csv_filename:
