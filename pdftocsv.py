@@ -75,7 +75,7 @@ def main():
 								st.download_button('Download file', data)
 								if st.download_button:
 									st.write(data)
-									break
+									
 									
 							#st.success("CSV file saved!")
 							#csv_file = st.text_input("Enter CSV filename:")
