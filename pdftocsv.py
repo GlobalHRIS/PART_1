@@ -67,10 +67,14 @@ def main():
 							split = text.split(',')
 							st.write(split)
 							#csv_file = st.text_input("Enter CSV filename:")
-							new_file = text.to_csv(split, index=False)
+							new_file = split.to_csv(split, index=False)
 							myfile = pd.read_csv(new_file)
-							st.write(myfile)
-								#st.success(f"CSV file saved as {csv_file}.")
+							# Prompt the user to enter a filename to save the CSV file as
+							csv_filename = st.text_input("Enter a filename for the CSV file")
+							if csv_filename:
+								# Save the CSV file to the user's computer
+								csv_file = pdf_data.to_csv(f"{csv_filename}.csv", index=False)
+								st.success("CSV file saved!").")
 							
 					except:
 						st.write("None")
