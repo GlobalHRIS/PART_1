@@ -73,7 +73,7 @@ def main():
 								# Save the CSV file to the user's computer
 								csv_file = pdf_data.to_csv(f"{csv_filename}.csv", index=False)
 								st.download_button('Download file', data)
-								if st.download_button
+								if st.download_button:
 									st.write(data)
 									break
 							#st.success("CSV file saved!")
