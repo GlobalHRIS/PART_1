@@ -67,7 +67,7 @@ def main():
 							payslip = text.split(' ')
 							st.write(payslip)
 							csv_filename = st.text_input("Enter a filename for the CSV file")
-							if csv_filename:
+							if csv_filename is not None:
 								# Save the CSV file to the user's computer
 								csv_file = payslip.to_csv(f"{csv_filename}.csv", index=False)
 								st.success("CSV file saved!")
