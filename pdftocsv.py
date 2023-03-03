@@ -64,14 +64,15 @@ def main():
 						with pdfplumber.open(docx_file) as pdf:
 							page = pdf.pages[0]
 							text = page.extract_text()
-							split = text.split(' ')
+							payslip = text.split(' ')
+							st.write(payslip)
 							#new_file = split.to_csv(split, index=False)
 							#myfile = pd.read_csv(new_file)
 							# Prompt the user to enter a filename to save the CSV file as
 							csv_filename = st.text_input("Enter a filename for the CSV file")
 							if csv_filename:
 								# Save the CSV file to the user's computer
-								csv_file = pdf_data.to_csv(f"{csv_filename}.csv", index=False)
+								csv_file = payslip.to_csv(f"{csv_filename}.csv", index=False)
 								st.download_button('Download file', data)
 								if st.download_button:
 									st.write(data)
