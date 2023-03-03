@@ -74,7 +74,7 @@ def main():
 							if csv_filename:
 								# Save the CSV file to the user's computer
 								csv_file = pdf_data.to_csv(f"{csv_filename}.csv", index=False)
-								st.success("CSV file saved!").")
+								st.success("CSV file saved!")
 							
 					except:
 						st.write("None")
