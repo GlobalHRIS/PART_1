@@ -66,9 +66,9 @@ def main():
 							text = page.extract_text()
 							payslip = text.split(' ')
 							st.write(payslip)
-							if payslip is not None:
+							if pdf is not None:
 								# Convert the PDF file to a CSV file
-								df = pdf_to_csv(payslip)
+								df = pdf_to_csv(pdf)
 								# Download link for the CSV file
 								csv_file = df.to_csv(index=False)
 								st.download_button(
