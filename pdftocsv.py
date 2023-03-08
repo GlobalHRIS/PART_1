@@ -58,28 +58,16 @@ def main():
 					# st.text(raw_text) # Works
 					st.write(raw_text) # works
 				elif docx_file.type == "application/pdf":
-					# raw_text = read_pdf(docx_file)
-					# st.write(raw_text)
+					df = pdf_to_csv(pdf)
+					csv_file = df.to_csv(index=False)
+					st.download_button(label="Download CSV file",data=csv_file,file_name="converted_file.csv",mime="text/csv")
+					st.write(df)
 					try:
 						with pdfplumber.open(docx_file) as pdf:
 							page = pdf.pages[0]
 							text = page.extract_text()
 							payslip = text.split(' ')
-							st.write(payslip)
-							if pdf is not None:
-								# Convert the PDF file to a CSV file
-								df = pdf_to_csv(pdf)
-								# Download link for the CSV file
-								csv_file = df.to_csv(index=False)
-								st.download_button(
-									label="Download CSV file",
-									data=csv_file,
-									file_name="converted_file.csv",
-									mime="text/csv"
-								)
-								# Show the DataFrame
-								st.write(df)
-											
+							st.write(payslip)					
 							
 					except:
 						st.write("None")
