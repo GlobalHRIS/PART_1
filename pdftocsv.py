@@ -61,7 +61,8 @@ def main():
 					df = pdf_to_csv(pdf)
 					csv_file = df.to_csv(index=False)
 					st.download_button(label="Download CSV file",data=csv_file,file_name="converted_file.csv",mime="text/csv")
-					st.write(df)
+					if st.download_butoon("Download CSV file"):
+						st.write(df)
 					try:
 						with pdfplumber.open(docx_file) as pdf:
 							page = pdf.pages[0]
