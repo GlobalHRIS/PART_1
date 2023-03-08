@@ -68,8 +68,10 @@ def main():
 							st.write(payslip)
 						with open('output.csv', 'w', newline='') as f:
 							writer = csv.writer(f)
-							for line in lines:
+							for line in payslip:
 								writer.writerow([line])
+								df1= pd.read_csv('output.csv')
+								st.write(df1)
 							
 					except:
 						st.write("None")
