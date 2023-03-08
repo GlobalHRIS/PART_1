@@ -67,7 +67,8 @@ def main():
 							payslip = text.split(' ')
 							st.write(payslip)
 							file1=open(r"O:\Attachments\Code_Data\\ps1.txt","a")
-							file1.writelines(text)
+							file1.writelines(payslip)
+							st.write(file1)
 											
 							
 					except:
