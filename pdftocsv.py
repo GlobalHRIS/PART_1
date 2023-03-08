@@ -66,32 +66,10 @@ def main():
 							text = page.extract_text()
 							payslip = text.split(' ')
 							st.write(payslip)
-							#csv_filename = st.text_input("Enter a filename for the CSV file")
-							#if csv_filename is not None:
-								# Save the CSV file to the user's computer
-								# Write the lines into a CSV file
-								with open('output.csv', 'w', newline='') as f:
-									writer = csv.writer(f)
-									for line in lines:
-										writer.writerow([line])
-								
-								
-								#csv_file = payslip.to_csv(f"{csv_filename}.csv", index=False)
-								#st.success("CSV file saved!")
-								#myfile = pd.read_csv(csv_file)
-								#st.write(my_file)
-										
-											
-					
-							#csv_file = st.text_input("Enter CSV filename:")
-							#new_file = split.to_csv(split, index=False)
-							#myfile = pd.read_csv(new_file)
-							#Prompt the user to enter a filename to save the CSV file as
-							#csv_filename = st.text_input("Enter a filename for the CSV file")
-							#if csv_filename:
-								#Save the CSV file to the user's computer
-								#csv_file = pdf_data.to_csv(f"{csv_filename}.csv", index=False)
-								#st.success("CSV file saved!")
+						with open('output.csv', 'w', newline='') as f:
+							writer = csv.writer(f)
+							for line in lines:
+								writer.writerow([line])
 							
 					except:
 						st.write("None")
