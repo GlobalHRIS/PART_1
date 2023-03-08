@@ -66,9 +66,14 @@ def main():
 							text = page.extract_text()
 							payslip = text.split(' ')
 							st.write(payslip)
-							file1=open(r"O:\Attachments\Code_Data\\ps1.txt","a")
-							file1.writelines(payslip)
-							st.write(file1)
+							# Convert the text to a pandas DataFrame
+							df = pd.DataFrame(payslip, columns=['text'])
+							# Split the text into rows and columns
+							df = df['text'].str.split('\n', expand=True)
+							# Save the DataFrame as a CSV file
+							# Replace 'filename.csv' with the name you want to give your CSV file
+							final_csv = df.to_csv('payslip_1.csv', index=False)
+							st.write(final_csv)
 											
 							
 					except:
