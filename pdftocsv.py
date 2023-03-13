@@ -94,7 +94,10 @@ def main():
 				if emp_number:
 					empdata = df[df['Employee Number'] == int(emp_number)]
 					st.write("The net pay difference for employee number {} is:".format(emp_number))
-					st.write(empdata)
+					#st.write(empdata)
+					if (Net_Pay_Diff>1000):
+						st.write("The AI tool has taken action on the employee net pay difference and it is higher than the tolerance value")
+						st.write(empdata)
 					break
 							
 	else:
