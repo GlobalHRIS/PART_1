@@ -84,14 +84,14 @@ def main():
 		if file is not None:
 			df1 = pd.read_csv(file)
 			df2 = pd.read_csv(file, usecols=["Employee Number", "Net Pay Change last 6 Months", "AI Decision","AI Solution_1(Based on Net Pay)"])
-			month1 = st.selectbox("Select the first month", df.columns)
-			month2 = st.selectbox("Select the second month", df.columns)
+			month1 = st.selectbox("Select the first month", df1.columns)
+			month2 = st.selectbox("Select the second month", df1.columns)
 			Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
 			df1[Net_Pay_Diff] = df1[month1] - df1[month2]
 			#st.write("Net Pay Difference of all the Employees")
 			#st.write(df)
 			emp_number = st.text_input("Enter the employee number:")
-			for row in df:
+			for row in df2:
 				if emp_number:
 					empdata = df2[df2['Employee Number'] == int(emp_number)]
 					st.write("The net pay difference for employee number {} is:".format(emp_number))
