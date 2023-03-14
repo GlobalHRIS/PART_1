@@ -64,7 +64,7 @@ def main():
 							page = pdf.pages[0]
 							text = page.extract_text()
 							payslip = text.split(' ')
-							df = pd.
+							
 							st.write(payslip)
 							st.download_button(label="Download as CSV", data=filtered_employees[['name', 'net_pay_diff']].to_csv(index=False), file_name='filtered_employees.csv')
 							
