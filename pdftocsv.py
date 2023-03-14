@@ -58,17 +58,15 @@ def main():
 					# st.text(raw_text) # Works
 					st.write(raw_text) # works
 				elif docx_file.type == "application/pdf":
-					df = pdf_to_csv(pdf)
-					csv_file = df.to_csv(index=False)
-					st.download_button(label="Download CSV file",data=csv_file,file_name="converted_file.csv",mime="text/csv")
-					if st.download_butoon("Download CSV file"):
-						st.write(df)
+					
 					try:
 						with pdfplumber.open(docx_file) as pdf:
 							page = pdf.pages[0]
 							text = page.extract_text()
 							payslip = text.split(' ')
-							st.write(payslip)					
+							df = pd.
+							st.write(payslip)
+							st.download_button(label="Download as CSV", data=filtered_employees[['name', 'net_pay_diff']].to_csv(index=False), file_name='filtered_employees.csv')
 							
 					except:
 						st.write("None")
