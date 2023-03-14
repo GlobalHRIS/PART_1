@@ -36,7 +36,7 @@ def main():
 	st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
 	st.image("logo.png", width = 400)
 	st.title("Global HR Implementation Services Limited")
-	menu = ["About Us","Upload Payslip","AI Net Pay Difference Finder"]
+	menu = ["About Us","Upload Payslip","AI Net Pay Difference Finder", "AI Decision Tool"]
 	choice = st.sidebar.selectbox("Menu",menu)
 
 
@@ -82,21 +82,34 @@ def main():
 		st.subheader("AI Net Pay Difference Finder")
 		file = st.file_uploader("Upload File",type=["csv"])
 		if file is not None:
-			df1 = pd.read_csv(file, usecols=["Employee Number", "Net Pay Change last 6 Months", "AI Decision","AI Solution_1(Based on Net Pay)"])
-			df2 = pd.read_csv(file)
-			month1 = st.selectbox("Select the first month", df2.columns)
-			month2 = st.selectbox("Select the second month", df2.columns)
+			df = pd.read_csv(file)
+			month1 = st.selectbox("Select the first month", df.columns)
+			month2 = st.selectbox("Select the second month", df.columns)
 			Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
-			df2[Net_Pay_Diff] = df2[month1] - df2[month2]
+			df[Net_Pay_Diff] = df[month1] - df[month2]
 			#st.write("Net Pay Difference of all the Employees")
 			#st.write(df)
 			emp_number = st.text_input("Enter the employee number:")
-			for row in df1:
+			for row in df:
 				if emp_number:
-					empdata = df1[df1['Employee Number'] == int(emp_number)]
+					empdata = df[df['Employee Number'] == int(emp_number)]
 					st.write("The net pay difference for employee number {} is:".format(emp_number))
 					st.write(empdata)
 					break
+					
+	elif choice =="AI Decision Tool"
+		st.subheader("AI Solution Provider")
+		file = st.file_uploader("Upload File",type=["csv"])
+		if file is not None:
+			df = pd.read_csv(file, usecols=["Employee Number", "Net Pay Change last 6 Months", "AI Decision","AI Solution_1(Based on Net Pay)"])
+			emp_number = st.text_input("Enter the employee number:")
+			for row in df:
+				if emp_number:
+					empdata = df[df['Employee Number'] == int(emp_number)]
+					st.write("The net pay difference for employee number {} is:".format(emp_number))
+					st.write(empdata)
+					break
+					
 							
 	else:
 		st.subheader("About Us")
