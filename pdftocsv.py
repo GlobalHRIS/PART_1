@@ -82,8 +82,8 @@ def main():
 		st.subheader("AI Net Pay Difference Finder")
 		file = st.file_uploader("Upload File",type=["csv"])
 		if file is not None:
-			df1 = pd.read_csv(file)
-			df2 = pd.read_csv(file, usecols=["Employee Number", "Net Pay Change last 6 Months", "AI Decision","AI Solution_1(Based on Net Pay)"])
+			df1 = pd.read_csv(file, usecols=["Employee Number", "Net Pay Change last 6 Months", "AI Decision","AI Solution_1(Based on Net Pay)"])
+			#df2 = pd.read_csv(file)
 			month1 = st.selectbox("Select the first month", df1.columns)
 			month2 = st.selectbox("Select the second month", df1.columns)
 			Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
@@ -91,9 +91,9 @@ def main():
 			#st.write("Net Pay Difference of all the Employees")
 			#st.write(df)
 			emp_number = st.text_input("Enter the employee number:")
-			for row in df2:
+			for row in df1:
 				if emp_number:
-					empdata = df2[df2['Employee Number'] == int(emp_number)]
+					empdata = df1[df1['Employee Number'] == int(emp_number)]
 					st.write("The net pay difference for employee number {} is:".format(emp_number))
 					st.write(empdata)
 					break
