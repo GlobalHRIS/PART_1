@@ -83,7 +83,7 @@ def main():
 		file = st.file_uploader("Upload File",type=["csv"])
 		if file is not None:
 			df1 = pd.read_csv(file)
-			df2 = pd.read_csv(file), usecols=["Employee Number", "Net Pay Change last 6 Months", "AI Decision","AI Solution_1(Based on Net Pay)"])
+			df2 = pd.read_csv(file, usecols=["Employee Number", "Net Pay Change last 6 Months", "AI Decision","AI Solution_1(Based on Net Pay)"])
 			month1 = st.selectbox("Select the first month", df.columns)
 			month2 = st.selectbox("Select the second month", df.columns)
 			Net_Pay_Diff = st.text_input("Enter the name of the new column", "Net Pay Difference")
