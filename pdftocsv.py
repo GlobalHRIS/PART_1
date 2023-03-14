@@ -97,7 +97,7 @@ def main():
 					st.write(empdata)
 					break
 					
-	elif choice =="AI Decision Tool"
+	elif choice =="AI Decision Tool":
 		st.subheader("AI Solution Provider")
 		file = st.file_uploader("Upload File",type=["csv"])
 		if file is not None:
