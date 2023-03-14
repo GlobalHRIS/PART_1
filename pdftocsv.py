@@ -96,9 +96,10 @@ def main():
 					st.write("The net pay difference for employee number {} is:".format(emp_number))
 					#st.write(empdata)
 					check_employee = df['Net_pay_Diff'] > 1000]
-					st.write("The AI tool has taken action on the employee net pay difference and it is higher than the tolerance value")
-					st.write(empdata)
-					break
+					if check_employee:
+						st.write("The AI tool has taken action on the employee net pay difference and it is higher than the tolerance value")
+						st.write(empdata)
+						break
 							
 	else:
 		st.subheader("About Us")
