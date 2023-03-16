@@ -53,7 +53,7 @@ def main():
       db_name = st.text_input('Database name', 'my_database')
       table_name = st.text_input('Table name', 'my_table')
       if db_name and table_name:
-        load_data_to_database(df, db_name, table_name)
+        load_data_to_database(docx_file, db_name, table_name)
         st.write('Data loaded into database')
       else:
         st.write('Please enter a database name and table name')
