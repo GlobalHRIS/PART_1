@@ -72,8 +72,7 @@ def main():
             payslip = text.split(' ')
             st.write(payslip)
             st.download_button(label="Download as CSV", data=payslip.to_csv(index=False), file_name='filtered_employees.csv')
-            
-          except:
+        except:
             st.write("None")
             
       elif docx_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
