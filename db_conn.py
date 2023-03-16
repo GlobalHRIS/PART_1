@@ -87,16 +87,7 @@ def main():
         # Use the right file processor ( Docx,Docx2Text,etc)
         raw_text = docx2txt.process(docx_file) # Parse in the uploadFile Class
         st.write(raw_text)
-        
-      # Get the name of the database and table
-      
-      # If the user entered a name for the database and table
-      if db_name and table_name:
-             # Load the data into the database
-                 load_data_to_database(df, db_name, table_name)
-                 st.write('Data loaded into database')
-               else:
-                    st.write('Please enter a database name and table name')   
+          
 
 
       elif choice == "AI Net Pay Difference Finder":
