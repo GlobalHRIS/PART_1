@@ -44,7 +44,7 @@ def main():
     st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
     st.image("logo.png", width = 400)
     st.title("Global HR Implementation Services Limited")
-    menu = ["About Us","Upload Payslip","AI Net Pay Difference Finder"]
+    menu = ["About Us","Upload Payslip","AI Net Pay Difference Finder", "AI Decision Tool"]
     choice = st.sidebar.selectbox("Menu",menu)
     
     if choice == "Upload Payslip":
