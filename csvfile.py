@@ -1,27 +1,23 @@
 import streamlit as st
 import pandas as pd
 
-def convert_to_csv(file):
-    # read text file into pandas dataframe
-    df = pd.read_csv(file, delimiter='\t')
-
-    # write dataframe to csv file
+def text_to_csv(file):
+    data = []
+    with open(file) as f:
+        for line in f.readlines():
+            data.append(line.strip().split())
+    df = pd.DataFrame(data)
     df.to_csv('output.csv', index=False)
 
-    # display success message
-    st.success('File converted successfully!')
+st.title('Text to CSV Converter')
+file = st.file_uploader("Upload a text file", type=["txt"])
 
-# Streamlit app
-def app():
-    st.set_page_config(page_title="Text to CSV Converter")
-    st.title("Text to CSV Converter")
-
-    # file upload widget
-    file = st.file_uploader("Upload a text file", type=["txt"])
-
-    # convert file to csv on button click
-    if st.button("Convert to CSV"):
-        if file is not None:
-            convert_to_csv(file)
-        else:
-            st.warning("Please upload a text file first.")
+if file:
+    st.write(f"Uploading file: {file.name}")
+    text_to_csv(file)
+    st.download_button(
+        label="Download CSV",
+        data=open('output.csv', 'rb').read(),
+        file_name='output.csv',
+        mime='text/csv'
+    )
