@@ -44,12 +44,19 @@ def main():
     st.set_page_config(page_title ="GlobalHRIS", page_icon =":guardsman:", layout ="wide")
     st.image("logo.png", width = 400)
     st.title("Global HR Implementation Services Limited")
-    menu = ["About Us","Upload Payslip","AI Net Pay Difference Finder", "AI Decision Tool"]
+    menu = ["About Us","Upload Payslip","AI Net Pay Difference Finder"]
     choice = st.sidebar.selectbox("Menu",menu)
     
     if choice == "Upload Payslip":
       st.subheader("Upload your payslip")
       docx_file = st.file_uploader("Upload File",type=['txt','docx','pdf'])
+      db_name = st.text_input('Database name', 'my_database')
+      table_name = st.text_input('Table name', 'my_table')
+      if db_name and table_name:
+        load_data_to_database(df, db_name, table_name)
+        st.write('Data loaded into database')
+        else:
+          st.write('Please enter a database name and table name')
       if st.button("Process"):
         if docx_file is not None:
           file_details = {"Filename":docx_file.name,"FileType":docx_file.type,"FileSize":docx_file.size}
@@ -75,10 +82,21 @@ def main():
         except:
             st.write("None")
             
+            
       elif docx_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
         # Use the right file processor ( Docx,Docx2Text,etc)
         raw_text = docx2txt.process(docx_file) # Parse in the uploadFile Class
         st.write(raw_text)
+        
+      # Get the name of the database and table
+      
+      # If the user entered a name for the database and table
+      if db_name and table_name:
+             # Load the data into the database
+                 load_data_to_database(df, db_name, table_name)
+                 st.write('Data loaded into database')
+               else:
+                    st.write('Please enter a database name and table name')   
 
 
       elif choice == "AI Net Pay Difference Finder":
@@ -99,18 +117,8 @@ def main():
                     st.write("The net pay difference for employee number {} is:".format(emp_number))
                     st.write(empdata)
                     break
-               # Get the name of the database and table
-               db_name = st.text_input('Database name', 'my_database')
-               table_name = st.text_input('Table name', 'my_table')
-               # If the user entered a name for the database and table
-               if db_name and table_name:
-                    # Load the data into the database
-                    load_data_to_database(df, db_name, table_name)
-                    st.write('Data loaded into database')
-               else:
-                    st.write('Please enter a database name and table name')
-              #else:
-                    #st.write('Please upload a CSV file')
+              
+              
                     
       elif choice =="AI Decision Tool":
         st.subheader("AI Solution Provider")
