@@ -55,8 +55,8 @@ def main():
       if db_name and table_name:
         load_data_to_database(df, db_name, table_name)
         st.write('Data loaded into database')
-        else:
-          st.write('Please enter a database name and table name')
+      else:
+        st.write('Please enter a database name and table name')
       if st.button("Process"):
         if docx_file is not None:
           file_details = {"Filename":docx_file.name,"FileType":docx_file.type,"FileSize":docx_file.size}
