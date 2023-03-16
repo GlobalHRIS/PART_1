@@ -1,6 +1,6 @@
 streamlit==1.19.0
 pandas==1.4.4
-#pypi==2.1
+pypi==2.1
 tabula==1.0.5
 SQLAlchemy==1.4.46
 mysql-connector==2.2.9
