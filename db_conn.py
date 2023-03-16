@@ -109,8 +109,8 @@ def main():
                     st.write('Data loaded into database')
                else:
                     st.write('Please enter a database name and table name')
-              else:
-                    st.write('Please upload a CSV file')
+              #else:
+                    #st.write('Please upload a CSV file')
                     
       elif choice =="AI Decision Tool":
         st.subheader("AI Solution Provider")
