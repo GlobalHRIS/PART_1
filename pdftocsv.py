@@ -99,7 +99,7 @@ def main():
 		st.subheader("AI Solution Provider")
 		file = st.file_uploader("Upload File",type=["csv"])
 		if file is not None:
-			df = pd.read_csv(file, usecols=["Employee Number", "Net Pay Change last 6 Months", "AI Decision","AI Solution_1(Based on Net Pay)"])
+			df = pd.read_csv(file, usecols=["Employee Number", "Net Pay Change last 6 Months", "AI Decision","AI Solution"])
 			emp_number = st.text_input("Enter the employee number:")
 			for row in df:
 				if emp_number:
